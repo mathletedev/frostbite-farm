@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bak7jpn3jmgwd"]
+[gd_scene load_steps=12 format=3 uid="uid://bak7jpn3jmgwd"]
 
 [ext_resource type="Texture2D" uid="uid://ubkj5ahdjded" path="res://Assets/fire_lamp_frame_0.png" id="1_bhyqv"]
 [ext_resource type="Script" path="res://Scripts/fire_lamp.gd" id="1_yjg1h"]
@@ -6,6 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://bl71ics3w1qcr" path="res://Assets/fire_lamp_frame_2.png" id="3_k13qv"]
 [ext_resource type="Texture2D" uid="uid://xt7cyfrhpgn5" path="res://Assets/fire_lamp_frame_3.png" id="4_30frl"]
 [ext_resource type="Texture2D" uid="uid://btqgy6xe8ntse" path="res://Assets/fire_lamp.png" id="5_5x3su"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atvkd"]
+size = Vector2(20, 26)
+
+[sub_resource type="Gradient" id="Gradient_ukjc0"]
+offsets = PackedFloat32Array(0, 0.735484)
+colors = PackedColorArray(1, 0.545098, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yjw2r"]
+gradient = SubResource("Gradient_ukjc0")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1nwba"]
 animations = [{
@@ -27,14 +40,20 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_atvkd"]
-size = Vector2(20, 26)
+[sub_resource type="CircleShape2D" id="CircleShape2D_v3pfd"]
 
 [node name="FireLamp" type="Area2D"]
 texture_filter = 1
 collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_yjg1h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_atvkd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(4, 4)
+texture = SubResource("GradientTexture2D_yjw2r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -47,5 +66,6 @@ frame_progress = 0.708048
 texture_filter = 1
 texture = ExtResource("5_5x3su")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_atvkd")
+[node name="Heat" type="CollisionShape2D" parent="."]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_v3pfd")

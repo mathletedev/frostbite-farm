@@ -16,7 +16,12 @@ func _ready() -> void:
 
 	player = get_node(player_path)
 
-func _process(_delta: float) -> void:
+func _custom_process(_delta: float) -> void:
+	pass
+
+func _process(delta: float) -> void:
+	_custom_process(delta)
+
 	if Input.is_action_just_released("pick_up"):
 		pick_up()
 
