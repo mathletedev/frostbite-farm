@@ -9,5 +9,5 @@ func _ready():
 	player = get_node(player_path)
 	position = player.position
 
-func _process(delta):
+func _physics_process(delta):
 	position += (player.position - position) * tween_speed * delta
