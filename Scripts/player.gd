@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var max_speed: float = 150
 @export var acceleration: float = 300
-@export var friction: float = 500
+@export var friction: float = 1000
 @export var dash_speed: float = 300
 @export var dash_time: float = 0.15
 @export var dash_wait: float = 1
