@@ -110,16 +110,15 @@ radius = 9.0
 height = 32.0
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+scale = Vector2(5, 5)
 script = ExtResource("1_ktue5")
-dash_time = 0.2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_donnc")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.225951
+frame_progress = 0.872538
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_wbwd2")

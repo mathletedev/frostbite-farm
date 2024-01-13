@@ -3,8 +3,8 @@ extends CharacterBody2D
 @export var max_speed: float = 400
 @export var acceleration: float = 1000
 @export var friction: float = 800
-@export var dash_speed: float = 600
-@export var dash_time: float = 0.4
+@export var dash_speed: float = 1200
+@export var dash_time: float = 0.6
 @export var dash_wait: float = 1
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -22,11 +22,14 @@ func _ready():
 	dash_waiter.timeout.connect(_on_dash_waiter)
 
 func _process(_delta):
-	if Input.is_action_pressed("dash"):
-		dash()
+	var input: Vector2 = get_input()
+
+	if Input.is_action_pressed("dash") && input != Vector2.ZERO:
+		dash(input)
 
 func _physics_process(delta):
 	var input: Vector2 = get_input()
+
 	move(delta, input)
 	animate()
 
@@ -63,12 +66,12 @@ func animate() -> void:
 	elif velocity.x > 0:
 		sprite.flip_h = 0
 
-func dash() -> void:
-	if not can_dash:
+func dash(input: Vector2) -> void:
+	if !can_dash:
 		return
 	can_dash = false
 
-	velocity = (get_global_mouse_position() - position).normalized() * dash_speed
+	velocity = input.normalized() * dash_speed
 	curr_max_speed = dash_speed
 
 	dash_timer.start()
