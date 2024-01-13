@@ -44,6 +44,7 @@ position = Vector2(118, 121)
 position = Vector2(71, 123)
 scale = Vector2(1, 1)
 player_path = NodePath("../Player")
+lerp_speed = 10
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 position = Vector2(73, 176)

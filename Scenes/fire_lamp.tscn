@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bak7jpn3jmgwd"]
 
+[ext_resource type="Script" path="res://Scenes/fire_lamp.gd" id="1_27whq"]
 [ext_resource type="Texture2D" uid="uid://ubkj5ahdjded" path="res://Assets/fire_lamp_frame_0.png" id="1_bhyqv"]
-[ext_resource type="Script" path="res://Scripts/fire_lamp.gd" id="1_gb3xv"]
 [ext_resource type="Texture2D" uid="uid://ca0uu6lrkcw1n" path="res://Assets/fire_lamp_frame_1.png" id="2_y5win"]
 [ext_resource type="Texture2D" uid="uid://bl71ics3w1qcr" path="res://Assets/fire_lamp_frame_2.png" id="3_k13qv"]
 [ext_resource type="Texture2D" uid="uid://xt7cyfrhpgn5" path="res://Assets/fire_lamp_frame_3.png" id="4_30frl"]
@@ -32,8 +32,8 @@ size = Vector2(20, 26)
 
 [node name="FireLamp" type="Area2D"]
 texture_filter = 1
-scale = Vector2(5, 5)
-script = ExtResource("1_gb3xv")
+script = ExtResource("1_27whq")
+y_offset = 125.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
