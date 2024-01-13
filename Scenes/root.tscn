@@ -53,3 +53,4 @@ scale = Vector2(1, 1)
 
 [node name="Potato" parent="." instance=ExtResource("6_2w74m")]
 position = Vector2(131, -2)
+frozen_speed = 5

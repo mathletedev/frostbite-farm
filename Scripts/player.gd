@@ -22,19 +22,19 @@ func _ready() -> void:
 	dash_waiter.timeout.connect(_on_dash_waiter)
 
 func _process(_delta: float) -> void:
-	var input: Vector2 = get_input()
+	var input := get_input()
 
 	if Input.is_action_pressed("dash") && input != Vector2.ZERO:
 		dash(input)
 
 func _physics_process(delta: float) -> void:
-	var input: Vector2 = get_input()
+	var input := get_input()
 
 	move(delta, input)
 	animate()
 
 func get_input() -> Vector2:
-	var input: Vector2 = Vector2.ZERO
+	var input := Vector2.ZERO
 	input.x = Input.get_axis("left", "right")
 	input.y = Input.get_axis("up", "down")
 

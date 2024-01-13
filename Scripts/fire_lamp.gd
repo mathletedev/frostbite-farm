@@ -5,7 +5,7 @@ extends "item.gd"
 @export var pulse_rate: float = 0.005
 
 func get_type() -> String:
-	return "watering_can"
+	return "fire_lamp"
 
 func _draw() -> void:
 	var colour = warmth_colour
