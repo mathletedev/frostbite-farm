@@ -10,17 +10,17 @@ var can_pick_up: bool = false;
 var picked_up: bool = false;
 var player: Node2D
 
-func _ready():
+func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 
 	player = get_node(player_path)
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if Input.is_action_just_released("pick_up"):
 		pick_up()
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if picked_up:
 		position += (player.position + Vector2.UP * y_offset - position) * lerp_speed * delta
 

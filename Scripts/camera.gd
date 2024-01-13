@@ -5,9 +5,9 @@ extends Camera2D
 
 var player: Node2D
 
-func _ready():
+func _ready() -> void:
 	player = get_node(player_path)
 	position = player.position
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	position += (player.position - position) * tween_speed * delta

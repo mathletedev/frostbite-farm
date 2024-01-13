@@ -15,19 +15,19 @@ extends CharacterBody2D
 
 var can_dash = true
 
-func _ready():
+func _ready() -> void:
 	dash_timer.wait_time = dash_time
 	dash_timer.timeout.connect(_on_dash_timer)
 	dash_waiter.wait_time = dash_wait
 	dash_waiter.timeout.connect(_on_dash_waiter)
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var input: Vector2 = get_input()
 
 	if Input.is_action_pressed("dash") && input != Vector2.ZERO:
 		dash(input)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	var input: Vector2 = get_input()
 
 	move(delta, input)
