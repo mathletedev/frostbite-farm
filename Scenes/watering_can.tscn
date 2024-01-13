@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg31xievp6f3n"]
+
+[ext_resource type="Texture2D" uid="uid://cbkms3p7co07p" path="res://Assets/watering_can.png" id="1_jdwme"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_81mdp"]
+radius = 35.2278
+
+[node name="WateringCan" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_jdwme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_81mdp")
