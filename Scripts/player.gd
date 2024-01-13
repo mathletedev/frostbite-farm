@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var acceleration: float = 1000
 @export var friction: float = 800
 @export var dash_speed: float = 1200
-@export var dash_time: float = 0.6
+@export var dash_time: float = 0.3
 @export var dash_wait: float = 1
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -41,13 +41,14 @@ func get_input() -> Vector2:
 	return input
 
 func move(delta: float, input: Vector2) -> void:
-	if input == Vector2.ZERO:
-		if velocity.length() > friction * delta:
-			velocity -= velocity.normalized() * friction * delta
+	if can_dash:
+		if input == Vector2.ZERO:
+			if velocity.length() > friction * delta:
+				velocity -= velocity.normalized() * friction * delta
+			else:
+				velocity = Vector2.ZERO
 		else:
-			velocity = Vector2.ZERO
-	else:
-		velocity += input * acceleration * delta
+			velocity += input * acceleration * delta
 
 	velocity = velocity.limit_length(curr_max_speed)
 

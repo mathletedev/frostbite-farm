@@ -160,7 +160,6 @@ sources/0 = SubResource("TileSetAtlasSource_6hepm")
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 position = Vector2(503, 300)
-dash_time = 0.6
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4mtim")
