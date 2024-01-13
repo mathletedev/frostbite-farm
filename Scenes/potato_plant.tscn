@@ -8,7 +8,7 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
 
-[node name="Potato" type="Area2D"]
+[node name="PotatoPlant" type="Area2D"]
 script = ExtResource("1_rcjsp")
 stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_0nnoy"), ExtResource("4_ukd3u"), ExtResource("5_wqij7")])
 
