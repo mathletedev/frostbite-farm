@@ -10,6 +10,9 @@ var can_pick_up: bool = false;
 var picked_up: bool = false;
 var player: Node2D
 
+func get_type() -> String:
+	return ""
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
@@ -30,11 +33,11 @@ func _physics_process(delta) -> void:
 		position += (player.position + Vector2.UP * y_offset * (-1 if player.velocity.y < 0 else 1) - position) * lerp_speed * delta
 
 func pick_up() -> void:
-	if !picked_up && (!can_pick_up || GameManager.holding_item):
+	if !picked_up && (!can_pick_up || GameManager.holding_item != ""):
 		return
 
 	picked_up = !picked_up
-	GameManager.holding_item = picked_up
+	GameManager.holding_item = get_type() if picked_up else ""
 
 	scale.x = picked_up_scale if picked_up else 1.0
 	scale.y = scale.x

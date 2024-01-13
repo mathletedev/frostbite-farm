@@ -4,6 +4,9 @@ extends "item.gd"
 @export var warmth_colour: Color = "#945A50"
 @export var pulse_rate: float = 0.005
 
+func get_type() -> String:
+	return "watering_can"
+
 func _draw() -> void:
 	var colour = warmth_colour
 	colour.a = (sin(Time.get_ticks_msec() * pulse_rate) + 1) / 4 + 0.25
