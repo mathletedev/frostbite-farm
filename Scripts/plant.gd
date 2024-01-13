@@ -43,14 +43,16 @@ func _on_area_entered(other: Area2D) -> void:
 		frozen_countdown = frozen_speed
 		sprite.modulate.a = 1
 
-		var warning := get_node("Warning")
+		var warning := get_node_or_null("Warning")
 		if warning != null:
 			warning.queue_free()
 
 func _on_area_exited(other: Area2D) -> void:
 	if other.name == "FireLamp":
 		touching_lamp = false
-		frozen_timer.start()
+
+		if curr_stage != 0:
+			frozen_timer.start()
 
 func _on_growth_timer() -> void:
 	curr_stage += 1
