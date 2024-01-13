@@ -42,7 +42,9 @@ player_path = NodePath("../Player")
 [node name="WateringCan2" parent="." instance=ExtResource("4_ajff6")]
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-player_path = NodePath("../Player")
+collision_layer = 1
+collision_mask = 1
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
+unique_name_in_owner = true
 scale = Vector2(1, 1)
