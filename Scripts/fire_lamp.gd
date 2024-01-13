@@ -1,7 +1,7 @@
 extends "item.gd"
 
 @export var warmth_radius: float = 100
-@export var warmth_colour: Color = "#945A50"
+@export var warmth_colour: Color = "#D9D7A1"
 @export var pulse_rate: float = 0.005
 
 @onready var light: PointLight2D = $PointLight2D
@@ -16,7 +16,7 @@ func _draw() -> void:
 
 func _custom_process(_delta: float) -> void:
 	queue_redraw()
-	light.energy = (sin(Time.get_ticks_msec() * pulse_rate) + 1) / 4 + 0.25
+	light.energy = (sin(Time.get_ticks_msec() * pulse_rate) + 1) / 4 + 0.5
 
 func draw_circle_arc(center, radius, angle_from, angle_to, color):
 	var nb_points = 32

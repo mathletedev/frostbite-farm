@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=12 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bbfoplgb1noyd" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx7x8"]
 texture = ExtResource("1_2a012")
@@ -111,6 +113,18 @@ sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 
 [node name="Root" type="Node"]
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = -152.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_p72cy")
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(-9, 108)
@@ -125,6 +139,9 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.584314, 0.584314, 0.584314, 1)
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6
