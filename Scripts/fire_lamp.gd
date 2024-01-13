@@ -4,7 +4,7 @@ extends Area2D
 @export var picked_up_scale: float = 0.8
 @export var picked_up_opacity: float = 0.8
 @export var y_offset: float = 30
-@export var lerp_speed = 3000
+@export var lerp_speed = 10
 
 var can_pick_up: bool = false;
 var picked_up: bool = false;
