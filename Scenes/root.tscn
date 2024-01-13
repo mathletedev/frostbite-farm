@@ -225,7 +225,7 @@ position = Vector2(-5, -4)
 texture_filter = 1
 position = Vector2(88, -12)
 sprite_frames = SubResource("SpriteFrames_1nwba")
-frame_progress = 0.708048
+frame_progress = 0.0102815
 
 [node name="Sprite2D" type="Sprite2D" parent="FireLamp"]
 texture_filter = 1
