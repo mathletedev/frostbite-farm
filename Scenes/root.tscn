@@ -4,14 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
 [ext_resource type="Texture2D" uid="uid://y8ht1dknigwf" path="res://Assets/cliff_tileset.png" id="2_bvalk"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
-<<<<<<< HEAD
-[ext_resource type="PackedScene" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="PackedScene" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
-=======
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bbfoplgb1noyd" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
->>>>>>> 4b6682049d8d8ee3c149bc0eaee3887d59447263
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx7x8"]
 texture = ExtResource("1_2a012")
@@ -75,8 +70,6 @@ player_path = NodePath("../Player")
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
 z_index = 8
-collision_layer = 1
-collision_mask = 1
 player_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
