@@ -38,14 +38,12 @@ script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
-position = Vector2(118, 121)
+
+[node name="WateringCan2" parent="." instance=ExtResource("4_ajff6")]
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-position = Vector2(71, 123)
-scale = Vector2(1, 1)
 player_path = NodePath("../Player")
-lerp_speed = 10
+y_offset = 30.0
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
-position = Vector2(73, 176)
 scale = Vector2(1, 1)
