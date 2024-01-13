@@ -20,7 +20,7 @@ func _physics_process(delta):
 
 	if velocity.x < 0:
 		sprite.flip_h = 1
-	elif velocity.x > 0:
+	else:
 		sprite.flip_h = 0
 
 	move_and_slide()
