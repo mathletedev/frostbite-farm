@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var max_speed: float = 400
 @export var acceleration: float = 1000
-@export var friction: float = 800
+@export var friction: float = 5000
 @export var dash_speed: float = 1200
 @export var dash_time: float = 0.3
 @export var dash_wait: float = 1
@@ -41,7 +41,7 @@ func get_input() -> Vector2:
 	return input
 
 func move(delta: float, input: Vector2) -> void:
-	if can_dash:
+	if curr_max_speed != dash_speed:
 		if input == Vector2.ZERO:
 			if velocity.length() > friction * delta:
 				velocity -= velocity.normalized() * friction * delta
