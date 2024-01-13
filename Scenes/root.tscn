@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://y8ht1dknigwf" path="res://Assets/cliff_tileset.png" id="2_bvalk"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="PackedScene" path="res://Scenes/potato.tscn" id="6_2w74m"]
+[ext_resource type="PackedScene" uid="uid://bbfoplgb1noyd" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx7x8"]
@@ -72,12 +72,9 @@ collision_layer = 1
 collision_mask = 1
 player_path = NodePath("../Player")
 
-[node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
-position = Vector2(0, 150)
-
-[node name="Potato" parent="." instance=ExtResource("6_2w74m")]
-position = Vector2(131, -2)
-
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
 scale = Vector2(1, 1)
+
+[node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
+position = Vector2(150, 0)
