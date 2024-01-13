@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@export var max_speed: float = 400
-@export var acceleration: float = 1000
-@export var friction: float = 800
-@export var dash_speed: float = 1200
-@export var dash_time: float = 0.3
+@export var max_speed: float = 150
+@export var acceleration: float = 300
+@export var friction: float = 500
+@export var dash_speed: float = 300
+@export var dash_time: float = 0.15
 @export var dash_wait: float = 1
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -15,19 +15,19 @@ extends CharacterBody2D
 
 var can_dash = true
 
-func _ready():
+func _ready() -> void:
 	dash_timer.wait_time = dash_time
 	dash_timer.timeout.connect(_on_dash_timer)
 	dash_waiter.wait_time = dash_wait
 	dash_waiter.timeout.connect(_on_dash_waiter)
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	var input: Vector2 = get_input()
 
 	if Input.is_action_pressed("dash") && input != Vector2.ZERO:
 		dash(input)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	var input: Vector2 = get_input()
 
 	move(delta, input)
@@ -41,7 +41,7 @@ func get_input() -> Vector2:
 	return input
 
 func move(delta: float, input: Vector2) -> void:
-	if can_dash:
+	if curr_max_speed != dash_speed:
 		if input == Vector2.ZERO:
 			if velocity.length() > friction * delta:
 				velocity -= velocity.normalized() * friction * delta

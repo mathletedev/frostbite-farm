@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wll8ttneku5r"
-path="res://.godot/imported/juan.png-43ac63c849b37e3c3eacc93c07d09ab0.ctex"
+uid="uid://ca0uu6lrkcw1n"
+path="res://.godot/imported/fire_lamp_frame_1.png-80d6832f48545082ba856f52cddd52e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/juan.png"
-dest_files=["res://.godot/imported/juan.png-43ac63c849b37e3c3eacc93c07d09ab0.ctex"]
+source_file="res://Assets/fire_lamp_frame_1.png"
+dest_files=["res://.godot/imported/fire_lamp_frame_1.png-80d6832f48545082ba856f52cddd52e6.ctex"]
 
 [params]
 

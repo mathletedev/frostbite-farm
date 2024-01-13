@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wll8ttneku5r"
-path="res://.godot/imported/juan.png-43ac63c849b37e3c3eacc93c07d09ab0.ctex"
+uid="uid://bive3nvqhu8pj"
+path="res://.godot/imported/snow_tileset.png-97fbb11dd37c66127d65f44886859a57.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/juan.png"
-dest_files=["res://.godot/imported/juan.png-43ac63c849b37e3c3eacc93c07d09ab0.ctex"]
+source_file="res://Assets/snow_tileset.png"
+dest_files=["res://.godot/imported/snow_tileset.png-97fbb11dd37c66127d65f44886859a57.ctex"]
 
 [params]
 

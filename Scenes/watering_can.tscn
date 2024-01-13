@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg31xievp6f3n"]
+[gd_scene load_steps=4 format=3 uid="uid://cg31xievp6f3n"]
 
-[ext_resource type="Texture2D" uid="uid://cbkms3p7co07p" path="res://Assets/watering_can.png" id="1_jdwme"]
+[ext_resource type="Script" path="res://Scripts/watering_can.gd" id="1_at6dp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tj0m6"]
+load_path = "res://.godot/imported/watering_can.png-db5df7e22aa6ce3b94b299dbce662d9c.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81mdp"]
-radius = 35.2278
+radius = 7.0
 
-[node name="WateringCan" type="StaticBody2D"]
+[node name="WateringCan" type="Area2D"]
+script = ExtResource("1_at6dp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(5, 5)
-texture = ExtResource("1_jdwme")
+texture = SubResource("CompressedTexture2D_tj0m6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_81mdp")
