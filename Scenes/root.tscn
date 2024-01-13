@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=9 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
+=======
+[ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
+[ext_resource type="PackedScene" uid="uid://bx4riihppopgr" path="res://Scenes/potato.tscn" id="6_2w74m"]
+[ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
+>>>>>>> 4b6682049d8d8ee3c149bc0eaee3887d59447263
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx7x8"]
 texture = ExtResource("1_2a012")
@@ -40,8 +46,7 @@ script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
-
-[node name="WateringCan2" parent="." instance=ExtResource("4_ajff6")]
+position = Vector2(-150, 0)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
 collision_layer = 1
@@ -50,3 +55,6 @@ collision_mask = 1
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
 scale = Vector2(1, 1)
+
+[node name="Potato" parent="." instance=ExtResource("6_2w74m")]
+position = Vector2(131, -2)
