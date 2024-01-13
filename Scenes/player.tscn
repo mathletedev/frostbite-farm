@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://biugwsjuhded1"]
+
+[ext_resource type="Texture2D" uid="uid://dw2in3q1vrxeu" path="res://Assets/juan.png" id="1_74fg2"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_hl6hv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwd2"]
+radius = 9.0
+height = 32.0
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_hl6hv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_74fg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wbwd2")
