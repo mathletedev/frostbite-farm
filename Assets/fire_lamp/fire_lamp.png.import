@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xt7cyfrhpgn5"
-path="res://.godot/imported/fire_lamp_frame_3.png-1c75a6b1b11e83a34c6d8274e5e699c2.ctex"
+uid="uid://btqgy6xe8ntse"
+path="res://.godot/imported/fire_lamp.png-3607be078e48c1e16a44f00557f7ec19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fire_lamp_frame_3.png"
-dest_files=["res://.godot/imported/fire_lamp_frame_3.png-1c75a6b1b11e83a34c6d8274e5e699c2.ctex"]
+source_file="res://Assets/fire_lamp/fire_lamp.png"
+dest_files=["res://.godot/imported/fire_lamp.png-3607be078e48c1e16a44f00557f7ec19.ctex"]
 
 [params]
 
