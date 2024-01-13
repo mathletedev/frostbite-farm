@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bo4ua1q5lqlwa"]
+[gd_scene load_steps=8 format=3 uid="uid://bak7jpn3jmgwd"]
 
 [ext_resource type="Texture2D" uid="uid://ubkj5ahdjded" path="res://Assets/fire_lamp_frame_0.png" id="1_bhyqv"]
 [ext_resource type="Texture2D" uid="uid://ca0uu6lrkcw1n" path="res://Assets/fire_lamp_frame_1.png" id="2_y5win"]
