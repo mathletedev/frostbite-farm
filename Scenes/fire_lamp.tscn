@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bo4ua1q5lqlwa"]
+[gd_scene load_steps=8 format=3 uid="uid://bak7jpn3jmgwd"]
 
 [ext_resource type="Script" path="res://Scenes/fire_lamp.gd" id="1_27whq"]
 [ext_resource type="Texture2D" uid="uid://ubkj5ahdjded" path="res://Assets/fire_lamp_frame_0.png" id="1_bhyqv"]
@@ -39,6 +39,7 @@ y_offset = 125.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_1nwba")
 autoplay = "default"
 frame_progress = 0.708048
