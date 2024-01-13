@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=8 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
 [ext_resource type="Script" path="res://Scenes/camera.gd" id="2_t0ogx"]
 [ext_resource type="Texture2D" uid="uid://c5yb20ujypv1a" path="res://icon.svg" id="3_jmv6l"]
+[ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yy77n"]
 
@@ -172,3 +173,5 @@ player_path = NodePath("../Player")
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(368, 386)
 texture = ExtResource("3_jmv6l")
+
+[node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
