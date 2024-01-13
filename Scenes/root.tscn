@@ -178,21 +178,28 @@ sources/1 = SubResource("TileSetAtlasSource_pymtm")
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(-10, 109)
-scale = Vector2(3.9, 3.9)
 tile_set = SubResource("TileSet_4mtim")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 131073, 2, 0, 65537, 2, 1, 131073, 1, 131071, 65537, 0, 65536, 65537, 1, 65537, 131073, 0, 196607, 1, 2, 131073, 1, 1, 131072, 1, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
-position = Vector2(-5, -4)
+position = Vector2(118, 121)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-position = Vector2(275, -12)
+position = Vector2(71, 123)
+scale = Vector2(1, 1)
 player_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
-position = Vector2(473, 240)
+position = Vector2(73, 176)
+scale = Vector2(1, 1)
+max_speed = 150.0
+acceleration = 200.0
+friction = 2000.0
+dash_speed = 300.0
+dash_time = 0.15

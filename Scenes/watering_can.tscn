@@ -4,14 +4,14 @@
 load_path = "res://.godot/imported/watering_can.png-db5df7e22aa6ce3b94b299dbce662d9c.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_81mdp"]
-radius = 35.2278
+radius = 7.0
 
 [node name="WateringCan" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(5, 5)
 texture = SubResource("CompressedTexture2D_tj0m6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_81mdp")
