@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var player_path: NodePath = "../Player"
+@export var player_path: NodePath = "%Player"
 @export var picked_up_scale: float = 0.8
 @export var picked_up_opacity: float = 0.8
 @export var y_offset: float = 30
@@ -27,7 +27,7 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta) -> void:
 	if picked_up:
-		position += (player.position + Vector2.UP * y_offset - position) * lerp_speed * delta
+		position += (player.position + Vector2.UP * y_offset * (-1 if player.velocity.y < 0 else 1) - position) * lerp_speed * delta
 
 func pick_up() -> void:
 	if !picked_up && (!can_pick_up || GameManager.holding_item):
