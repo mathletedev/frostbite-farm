@@ -200,9 +200,6 @@ size = Vector2(20, 26)
 
 [node name="Root" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
-position = Vector2(503, 300)
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 tile_set = SubResource("TileSet_4mtim")
@@ -235,3 +232,6 @@ texture = ExtResource("10_7n3mg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FireLamp"]
 position = Vector2(88, -12)
 shape = SubResource("RectangleShape2D_atvkd")
+
+[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
+position = Vector2(503, 300)
