@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=7 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
+[ext_resource type="Script" path="res://Scenes/camera.gd" id="2_t0ogx"]
+[ext_resource type="Texture2D" uid="uid://c5yb20ujypv1a" path="res://icon.svg" id="3_jmv6l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yy77n"]
 
@@ -157,7 +159,16 @@ sources/0 = SubResource("TileSetAtlasSource_6hepm")
 [node name="Root" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
+position = Vector2(503, 300)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4mtim")
 format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_t0ogx")
+player_path = NodePath("../Player")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(368, 386)
+texture = ExtResource("3_jmv6l")
