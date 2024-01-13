@@ -106,8 +106,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwd2"]
-radius = 7.0
-height = 14.8
+radius = 6.4
+height = 19.2
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -120,7 +120,7 @@ animation = &"up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.49012e-08, 7.6)
+position = Vector2(0.6, 8.2)
 shape = SubResource("CapsuleShape2D_wbwd2")
 
 [node name="DashTimer" type="Timer" parent="."]
