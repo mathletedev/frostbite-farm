@@ -175,10 +175,9 @@ sources/1 = SubResource("TileSetAtlasSource_pymtm")
 
 [node name="Root" type="Node"]
 
-[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
-
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
+position = Vector2(-10, 109)
 scale = Vector2(3.9, 3.9)
 tile_set = SubResource("TileSet_4mtim")
 format = 2
@@ -189,8 +188,10 @@ script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
-visible = false
 position = Vector2(-5, -4)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-position = Vector2(330, 3)
+position = Vector2(275, -12)
+
+[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
+position = Vector2(473, 240)
