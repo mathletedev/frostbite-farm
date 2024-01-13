@@ -1,15 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=11 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://ctrjcp185i5rb" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
-[ext_resource type="Script" path="res://Scenes/camera.gd" id="2_t0ogx"]
 [ext_resource type="Texture2D" uid="uid://c5yb20ujypv1a" path="res://icon.svg" id="3_jmv6l"]
-[ext_resource type="PackedScene" uid="uid://8qm6dj8gnpre" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="Texture2D" uid="uid://ubkj5ahdjded" path="res://Assets/fire_lamp_frame_0.png" id="6_7j5d2"]
-[ext_resource type="Texture2D" uid="uid://ca0uu6lrkcw1n" path="res://Assets/fire_lamp_frame_1.png" id="7_pfw7e"]
-[ext_resource type="Texture2D" uid="uid://bl71ics3w1qcr" path="res://Assets/fire_lamp_frame_2.png" id="8_3xfq6"]
-[ext_resource type="Texture2D" uid="uid://xt7cyfrhpgn5" path="res://Assets/fire_lamp_frame_3.png" id="9_ej3dh"]
-[ext_resource type="Texture2D" uid="uid://btqgy6xe8ntse" path="res://Assets/fire_lamp.png" id="10_7n3mg"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
+[ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
+[ext_resource type="PackedScene" uid="uid://bo4ua1q5lqlwa" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yy77n"]
 
@@ -175,29 +171,6 @@ tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_6hepm")
 sources/1 = SubResource("TileSetAtlasSource_pymtm")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1nwba"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_7j5d2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_pfw7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3xfq6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_ej3dh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 8.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_atvkd"]
-size = Vector2(20, 26)
-
 [node name="Root" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
@@ -209,7 +182,7 @@ tile_set = SubResource("TileSet_4mtim")
 format = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_t0ogx")
+script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
 [node name="Icon" type="Sprite2D" parent="."]
@@ -219,19 +192,4 @@ texture = ExtResource("3_jmv6l")
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 position = Vector2(-5, -4)
 
-[node name="FireLamp" type="StaticBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FireLamp"]
-texture_filter = 1
-position = Vector2(88, -12)
-sprite_frames = SubResource("SpriteFrames_1nwba")
-frame_progress = 0.708048
-
-[node name="Sprite2D" type="Sprite2D" parent="FireLamp"]
-texture_filter = 1
-position = Vector2(87, -12)
-texture = ExtResource("10_7n3mg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FireLamp"]
-position = Vector2(88, -12)
-shape = SubResource("RectangleShape2D_atvkd")
+[node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
