@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
-[ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
+[ext_resource type="PackedScene" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
+[ext_resource type="PackedScene" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mx7x8"]
 texture = ExtResource("1_2a012")
