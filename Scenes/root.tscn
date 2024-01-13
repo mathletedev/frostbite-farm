@@ -192,6 +192,7 @@ position = Vector2(-5, -4)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
 position = Vector2(275, -12)
+player_path = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 position = Vector2(473, 240)
