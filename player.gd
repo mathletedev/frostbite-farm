@@ -31,3 +31,6 @@ func get_input():
 	input.y = Input.get_axis("up", "down")
 
 	return input
+
+func dash(velocity):
+	return velocity.normalized() * 100
