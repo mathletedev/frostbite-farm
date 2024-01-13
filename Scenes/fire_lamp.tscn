@@ -35,16 +35,13 @@ scale = Vector2(5, 5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(88, -12)
 sprite_frames = SubResource("SpriteFrames_1nwba")
 autoplay = "default"
 frame_progress = 0.708048
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(87, -12)
 texture = ExtResource("5_5x3su")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(88, -12)
 shape = SubResource("RectangleShape2D_atvkd")

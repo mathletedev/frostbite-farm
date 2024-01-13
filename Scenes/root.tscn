@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=10 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://ctrjcp185i5rb" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
-[ext_resource type="Texture2D" uid="uid://c5yb20ujypv1a" path="res://icon.svg" id="3_jmv6l"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
@@ -176,6 +175,8 @@ sources/1 = SubResource("TileSetAtlasSource_pymtm")
 
 [node name="Root" type="Node"]
 
+[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 scale = Vector2(3.9, 3.9)
@@ -187,14 +188,9 @@ layer_0/tile_data = PackedInt32Array(65535, 131073, 2, 0, 65537, 2, 1, 131073, 1
 script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(368, 386)
-texture = ExtResource("3_jmv6l")
-
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
+visible = false
 position = Vector2(-5, -4)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-
-[node name="Player" parent="." instance=ExtResource("1_j0pxn")]
-position = Vector2(503, 300)
+position = Vector2(330, 3)
