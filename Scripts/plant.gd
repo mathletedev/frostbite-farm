@@ -38,7 +38,7 @@ func _on_body_exited(other: CollisionObject2D) -> void:
 		touching_player = false
 
 func _on_area_entered(other: Area2D) -> void:
-	if other.name == "FireLamp":
+	if other.name == "Heat":
 		touching_lamp = true
 		frozen_countdown = frozen_speed
 		sprite.modulate.a = 1
@@ -48,7 +48,7 @@ func _on_area_entered(other: Area2D) -> void:
 			warning.queue_free()
 
 func _on_area_exited(other: Area2D) -> void:
-	if other.name == "FireLamp":
+	if other.name == "Heat":
 		touching_lamp = false
 
 		if curr_stage != 0:

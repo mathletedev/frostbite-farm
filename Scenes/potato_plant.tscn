@@ -9,6 +9,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
 
 [node name="PotatoPlant" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_rcjsp")
 stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_0nnoy"), ExtResource("4_ukd3u"), ExtResource("5_wqij7")])
 
@@ -16,9 +18,9 @@ stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_0nnoy"), ExtReso
 texture_filter = 1
 texture = ExtResource("1_lnjej")
 
-[node name="GrowthTimer" type="Timer" parent="."]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_p4c17")
+
+[node name="GrowthTimer" type="Timer" parent="."]
 
 [node name="FrozenTimer" type="Timer" parent="."]
