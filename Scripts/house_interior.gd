@@ -15,6 +15,7 @@ func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
 		InteractHouse.visible = true
 		tile_map_collider.set_layer_enabled(0,false)
+		tile_map_collider.set_layer_enabled(1,false)
 		Player = body
 		inHouseRange = true
 	pass 
