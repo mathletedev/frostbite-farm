@@ -17,6 +17,9 @@ var lifetime_countdown: int = 0
 func get_type() -> String:
 	return "fire_lamp"
 
+func get_dialogue() -> String:
+	return " | Left click to light"
+
 func _custom_ready() -> void:
 	bar.value = 0
 	timer.timeout.connect(_on_timer)

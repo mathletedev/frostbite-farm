@@ -17,6 +17,9 @@ var arrow: Node2D = null
 func get_type() -> String:
 	return ""
 
+func get_dialogue() -> String:
+	return ""
+
 func _custom_ready() -> void:
 	pass
 
@@ -85,7 +88,7 @@ func _on_area_entered(other: Area2D) -> void:
 		arrow.position.y = -20
 		add_child(arrow)
 	
-	GameManager.dialogue = "Press [Space] to pick up"
+	GameManager.dialogue = "Press [Space] to pick up" + get_dialogue()
 	GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
