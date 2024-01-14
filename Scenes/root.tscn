@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=22 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="1_7evox"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dos7awdnrsffg" path="res://Scenes/shopkeeper.tscn" id="7_3vk4d"]
 [ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
 [ext_resource type="Texture2D" uid="uid://dr3yustp1r081" path="res://Assets/shop.png" id="10_v5uwk"]
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="11_m37ap"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -233,13 +234,16 @@ grow_horizontal = 0
 texture = ExtResource("9_7gl2j")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TextureRect"]
+texture_filter = 1
 layout_mode = 0
-offset_left = -65.0
-offset_top = 15.0
-offset_right = -25.0
-offset_bottom = 55.0
+offset_left = -955.0
+offset_top = 25.0
+offset_right = -642.0
+offset_bottom = 65.0
 scale = Vector2(3, 3)
-text = "10"
+theme_override_fonts/normal_font = ExtResource("11_m37ap")
+bbcode_enabled = true
+text = "[right]10[/right]"
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6
