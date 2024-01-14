@@ -11,7 +11,6 @@ size = Vector2(12, 16)
 [node name="PotatoSeeds" type="Area2D"]
 script = ExtResource("1_07ps0")
 plant_scene = ExtResource("3_dgye3")
-mask = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
