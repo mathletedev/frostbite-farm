@@ -19,16 +19,16 @@ func _ready() -> void:
 	pass
 
 func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
+	input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction.normalized() * speed
 
 	return input_direction
 	
-func _process(delta):
+func _process(_delta):
 	if in_dash == false: 
 		input_direction = get_input()
 	if Input.is_action_pressed("dash") && input_direction != Vector2.ZERO:
-		dash(input_direction, delta)
+		dash()
 	
 	move_and_slide()
 	animate()
@@ -46,7 +46,7 @@ func animate() -> void:
 	elif velocity.x > 0:
 		sprite.flip_h = 0
 		
-func dash(input_direction: Vector2, delta) -> void:
+func dash() -> void:
 	if !can_dash:
 		return
 	can_dash = false
