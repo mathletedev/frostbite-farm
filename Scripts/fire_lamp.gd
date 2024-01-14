@@ -1,6 +1,6 @@
 extends "item.gd"
 
-@export var warmth_radius: float = 100
+@export var warmth_radius: float = 50
 @export var warmth_colour: Color = "#D9D7A1"
 @export var pulse_rate: float = 0.005
 
