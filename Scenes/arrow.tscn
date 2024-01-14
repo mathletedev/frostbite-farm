@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqqwhr2si2orb"]
+
+[ext_resource type="Texture2D" uid="uid://d0mbi75ta3ejq" path="res://Assets/arrow.png" id="1_lggi5"]
+[ext_resource type="Script" path="res://Scripts/info.gd" id="2_afc21"]
+
+[node name="Arrow" type="Sprite2D"]
+z_index = 20
+texture_filter = 1
+texture = ExtResource("1_lggi5")
+script = ExtResource("2_afc21")
+bob_rate = 0.01

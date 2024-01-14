@@ -8,7 +8,7 @@ extends "item.gd"
 @onready var sprite: Sprite2D = $Sprite2D
 
 func _custom_ready() -> void:
-	text.text = format(count)
+	text.text = str(count)
 
 func _custom_process(_delta):
 	if picked_up && Input.is_action_just_released("interact") && GameManager.can_place == true:
@@ -19,10 +19,7 @@ func _custom_process(_delta):
 		plant.position.y = (int(player.position.y + plant_offset) / 32) * 32 - 16
 		get_tree().root.add_child(plant)
 
-		text.text = format(count)
+		text.text = str(count)
 
 		if count == 0:
 			queue_free()
-
-func format(x: int) -> String:
-	return "[center]" + str(x) + "[/center]"
