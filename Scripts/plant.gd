@@ -81,6 +81,11 @@ func _on_area_exited(other: Area2D) -> void:
 func _on_growth_timer() -> void:
 	curr_stage += 1
 	if curr_stage >= stages.size():
+		var product = product_scene.instantiate()
+		get_tree().root.add_child(product)
+		product.position = position
+
+		queue_free()
 		return
 	
 	sprite.texture = stages[curr_stage]
@@ -98,8 +103,4 @@ func _on_frozen_timer() -> void:
 		add_child(warning)
 
 	if frozen_countdown == 0:
-		var product = product_scene.instantiate()
-		get_tree().root.add_child(product)
-		product.position = position
-
 		queue_free()
