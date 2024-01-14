@@ -260,7 +260,7 @@ position = Vector2(-48, -80)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
-z_index = 10
+z_index = 30
 texture_filter = 1
 scale = Vector2(1, 1)
 

@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bl71ics3w1qcr" path="res://Assets/fire_lamp/fire_lamp_frame_2.png" id="4_3mwpn"]
 [ext_resource type="Texture2D" uid="uid://xt7cyfrhpgn5" path="res://Assets/fire_lamp/fire_lamp_frame_3.png" id="5_2aper"]
 [ext_resource type="Texture2D" uid="uid://btqgy6xe8ntse" path="res://Assets/fire_lamp/fire_lamp.png" id="6_8qlgt"]
-[ext_resource type="Texture2D" uid="uid://5mbvmql3bbui" path="res://Assets/progress_bar/bar.png" id="7_mny5s"]
-[ext_resource type="Texture2D" uid="uid://cp6cln3k8q1tb" path="res://Assets/progress_bar/progress.png" id="8_gtjvm"]
+[ext_resource type="Texture2D" uid="uid://dnvfai7c8mmfg" path="res://Assets/progress_bar/bar.png" id="7_mny5s"]
+[ext_resource type="Texture2D" uid="uid://ctny4idhsup6i" path="res://Assets/progress_bar/progress.png" id="8_gtjvm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atvkd"]
 size = Vector2(20, 26)
@@ -82,16 +82,18 @@ scale = Vector2(5, 5)
 shape = SubResource("CircleShape2D_v3pfd")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+z_index = 20
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -12.0
+offset_left = -9.0
 offset_top = -19.0
-offset_right = 12.0
-offset_bottom = 5.0
+offset_right = 9.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 100.0
 fill_mode = 6
 texture_under = ExtResource("7_mny5s")
 texture_progress = ExtResource("8_gtjvm")
+
+[node name="Timer" type="Timer" parent="."]
