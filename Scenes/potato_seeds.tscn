@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbfoplgb1noyd"]
+[gd_scene load_steps=5 format=3 uid="uid://bji8xai0suxy7"]
 
 [ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_07ps0"]
 [ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="1_fpb3m"]
 [ext_resource type="PackedScene" uid="uid://bx4riihppopgr" path="res://Scenes/potato_plant.tscn" id="2_xcqpf"]
-[ext_resource type="FontFile" path="/Github/res:///Assets/DePixelHalbfett.ttf" id="4_byfhq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
 size = Vector2(12, 16)
@@ -26,7 +25,6 @@ offset_left = -4.0
 offset_top = -34.0
 offset_right = 6.0
 offset_bottom = -13.0
-theme_override_fonts/normal_font = ExtResource("4_byfhq")
 text = "3"
 scroll_active = false
 context_menu_enabled = true

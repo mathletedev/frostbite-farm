@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=14 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
 [ext_resource type="Texture2D" uid="uid://y8ht1dknigwf" path="res://Assets/cliff_tileset.png" id="2_bvalk"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="PackedScene" uid="uid://bbfoplgb1noyd" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
+[ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
+[ext_resource type="Texture2D" uid="uid://bcw2fmyelpxjs" path="res://Assets/house.png" id="7_4aomf"]
+[ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="8_fn8lr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -151,6 +153,25 @@ player_path = NodePath("../Player")
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
 z_index = 8
 player_path = NodePath("../Player")
+
+[node name="House" type="StaticBody2D" parent="."]
+position = Vector2(4.085, 36.41)
+scale = Vector2(1.3, 1.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="House"]
+texture_filter = 1
+position = Vector2(37, -155)
+texture = ExtResource("7_4aomf")
+
+[node name="PointLight2D" type="PointLight2D" parent="House"]
+position = Vector2(37, -154)
+scale = Vector2(1.51563, 1.51563)
+color = Color(0.901961, 0.921569, 0.839216, 1)
+energy = 1.5
+texture = ExtResource("8_fn8lr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
+position = Vector2(38.2609, -145.652)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
