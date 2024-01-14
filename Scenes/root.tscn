@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8rs6qjlyqcpr" path="res://Assets/shop_light.png" id="5_8vrgq"]
 [ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
-[ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
+[ext_resource type="PackedScene" uid="uid://cc0c30h2eqjc4" path="res://Scenes/house.tscn" id="6_w7gb6"]
 [ext_resource type="Texture2D" uid="uid://dr3yustp1r081" path="res://Assets/shop.png" id="10_v5uwk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
