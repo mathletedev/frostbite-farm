@@ -228,3 +228,10 @@ scale = Vector2(1, 1)
 [node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
 z_index = 4
 position = Vector2(150, 0)
+count = 3
+player_path = NodePath("%Player")
+picked_up_scale = 0.8
+picked_up_opacity = 0.8
+y_offset = 30.0
+lerp_speed = 10
+mask = 4
