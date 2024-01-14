@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dos7awdnrsffg"]
+
+[ext_resource type="Script" path="res://Scripts/shopkeeper.gd" id="1_hif6c"]
+[ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhman"]
+radius = 92.0
+height = 184.0
+
+[node name="Shopkeeper" type="Node2D"]
+script = ExtResource("1_hif6c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_gg7w5")
+
+[node name="Interaction Radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Radius"]
+shape = SubResource("CapsuleShape2D_yhman")
+
+[connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
