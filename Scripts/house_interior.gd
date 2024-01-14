@@ -6,7 +6,7 @@ extends Node
 
 func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
-		sprite.modulate.a = 0.5
+		sprite.modulate.a = 0.2
 		tile_map.tile_set.set_physics_layer_collision_mask(0, 0)
 		tile_map.tile_set.set_physics_layer_collision_layer(0, 0)
 
