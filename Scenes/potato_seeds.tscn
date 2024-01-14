@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_07ps0"]
 [ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="1_fpb3m"]
-[ext_resource type="PackedScene" uid="uid://bx4riihppopgr" path="res://Scenes/potato_plant.tscn" id="3_dgye3"]
+[ext_resource type="PackedScene" uid="uid://bx4riihppopgr" path="res://Scenes/potato_plant.tscn" id="2_xcqpf"]
 [ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_5tvla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
@@ -10,7 +10,7 @@ size = Vector2(12, 16)
 
 [node name="PotatoSeeds" type="Area2D"]
 script = ExtResource("1_07ps0")
-plant_scene = ExtResource("3_dgye3")
+plant_scene = ExtResource("2_xcqpf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
