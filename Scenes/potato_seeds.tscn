@@ -11,6 +11,14 @@ size = Vector2(12, 16)
 [node name="PotatoSeeds" type="Area2D"]
 script = ExtResource("1_07ps0")
 plant_scene = ExtResource("2_xcqpf")
+count = null
+plant_offset = null
+mask = null
+player_path = null
+picked_up_scale = null
+picked_up_opacity = null
+y_offset = null
+lerp_speed = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

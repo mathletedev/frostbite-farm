@@ -5,6 +5,7 @@ extends Area2D
 @export var picked_up_opacity: float = 0.8
 @export var y_offset: float = 30
 @export var lerp_speed = 10
+@export_flags_2d_physics var mask: int = 4
 
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
 
@@ -41,6 +42,20 @@ func _physics_process(delta) -> void:
 func pick_up() -> void:
 	if !picked_up && (!can_pick_up || GameManager.holding != ""):
 		return
+
+	if picked_up:
+		var point: Vector2 = Vector2.ZERO
+		point.x = (floor(player.position.x / 32)) * 32 + 16
+		point.y = (floor((player.position.y + GameManager.PLACE_OFFSET) / 32)) * 32 - 16
+
+		var parameters := PhysicsPointQueryParameters2D.new()
+		parameters.position = point
+		parameters.collide_with_areas = true
+		parameters.collide_with_bodies = true
+		parameters.collision_mask = mask
+		var collisions := get_world_2d().direct_space_state.intersect_point(parameters)
+		if collisions.size() > 0:
+			return
 	
 	picked_up = !picked_up
 	GameManager.holding = get_type() if picked_up else ""

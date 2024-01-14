@@ -2,7 +2,6 @@ extends "item.gd"
 
 @export var plant_scene: PackedScene
 @export var count: int = 3
-@export var plant_offset: int = 48
 @export_flags_2d_physics var mask: int = 4
 
 @onready var text_label: RichTextLabel = $RichTextLabel
@@ -15,7 +14,7 @@ func _custom_process(_delta):
 	if picked_up && Input.is_action_just_released("interact"):
 		var point: Vector2 = Vector2.ZERO
 		point.x = (floor(player.position.x / 32)) * 32 + 16
-		point.y = (floor((player.position.y + plant_offset) / 32)) * 32 - 16
+		point.y = (floor((player.position.y + GameManager.PLACE_OFFSET) / 32)) * 32 - 16
 
 		var parameters := PhysicsPointQueryParameters2D.new()
 		parameters.position = point
