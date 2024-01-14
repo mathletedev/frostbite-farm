@@ -1,6 +1,9 @@
 extends Node
 
-@onready var InteractHouse: Sprite2D = get_node("House Interior")
+@onready var InteractHouse: Sprite2D = $HouseInterior
+@onready var house_collider: CollisionPolygon2D = $StaticBody2D/CollisionPolygon2D
+@onready var tile_map_collider: TileMap = get_node("%TileMap")
+
 var Player = null
 var inHouseRange = false
 
@@ -11,6 +14,7 @@ func _ready():
 func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
 		InteractHouse.visible = true
+		tile_map_collider.set_layer_enabled(0,false)
 		Player = body
 		inHouseRange = true
 	pass 
@@ -21,4 +25,5 @@ func _on_interaction_radius_body_exited(body):
 	if body.name == "Player":
 		InteractHouse.visible = false
 		inHouseRange = false
+		tile_map_collider.set_layer_enabled(0,true)
 	pass # Replace with function body.
