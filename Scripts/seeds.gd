@@ -11,7 +11,7 @@ func _custom_ready() -> void:
 	text.text = format(count)
 
 func _custom_process(_delta):
-	if picked_up && Input.is_action_just_released("interact"):
+	if picked_up && Input.is_action_just_released("interact") && GameManager.can_place == true:
 		count -= 1
 
 		var plant: Node2D = plant_scene.instantiate()
