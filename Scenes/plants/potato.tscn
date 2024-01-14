@@ -9,6 +9,7 @@ radius = 8.06226
 [node name="Potato" type="Area2D"]
 z_index = 4
 script = ExtResource("1_g6uw2")
+sell_price = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

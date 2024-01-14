@@ -12,6 +12,8 @@ extends Area2D
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
 @onready var frozen_countdown: int = frozen_speed
 
+const MY_DIALOGUE: String = "Left click to water"
+
 var curr_stage: int = 0
 var is_growing: bool = false
 var touching_player: bool = false
@@ -50,7 +52,7 @@ func _on_area_entered(other: Area2D) -> void:
 			add_child(arrow)
 
 		if GameManager.holding == "watering_can" && !is_growing:
-			GameManager.dialogue = "Left click to water"
+			GameManager.dialogue = MY_DIALOGUE
 			GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
@@ -66,7 +68,7 @@ func _on_area_exited(other: Area2D) -> void:
 			arrow.queue_free()
 			arrow = null
 
-		if GameManager.holding == "watering_can":
+		if GameManager.dialogue == MY_DIALOGUE:
 			GameManager.dialogue = ""
 			GameManager.update_dialogue.emit()
 

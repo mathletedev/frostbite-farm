@@ -6,6 +6,8 @@ extends Node
 @onready var PotatoSeeds: Area2D = get_node("/root/Root/PotatoSeeds")
 @onready var HeatLamp = preload("res://Scenes/fire_lamp.tscn")
 
+const MY_DIALOGUE = "Press [F] to open shop"
+
 var Player = null
 var inShopRange = false
 var item
@@ -25,7 +27,7 @@ func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
 		inShopRange = true
 
-		GameManager.dialogue = "Press [F] to open shop"
+		GameManager.dialogue = MY_DIALOGUE
 		GameManager.update_dialogue.emit()
 
 #exit interaction radius of shopkeeper
@@ -34,8 +36,9 @@ func _on_interaction_radius_body_exited(body):
 		inShopRange = false
 		ShopUI.visible = false
 
-		GameManager.dialogue = ""
-		GameManager.update_dialogue.emit()
+		if GameManager.dialogue == MY_DIALOGUE:
+			GameManager.dialogue = ""
+			GameManager.update_dialogue.emit()
 
 # closes shop ui
 func _on_button_pressed():
