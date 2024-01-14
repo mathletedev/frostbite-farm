@@ -113,28 +113,6 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_mx7x8")
 sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 
-<<<<<<< HEAD
-=======
-[sub_resource type="Gradient" id="Gradient_bsrax"]
-colors = PackedColorArray(0, 0.403922, 1, 1, 1, 1, 1, 0.262745)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_xbnwq"]
-gradient = SubResource("Gradient_bsrax")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i0qa2"]
-lifetime_randomness = 0.16
-particle_flag_disable_z = true
-spread = 120.0
-gravity = Vector3(0, 9, 0)
-initial_velocity_min = -250.0
-initial_velocity_max = -100.0
-angular_velocity_min = -50.0
-angular_velocity_max = 59.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-color_ramp = SubResource("GradientTexture1D_xbnwq")
-
->>>>>>> f04310b7ac9ab29a265f6cae10161c8b3fac308e
 [node name="Root" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
