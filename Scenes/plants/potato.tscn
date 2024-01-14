@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://igc6faugbiyg"]
 
-[ext_resource type="Texture2D" uid="uid://7b4lnf44t3xu" path="res://Assets/plant_potato/potato.png" id="1_5vjww"]
+[ext_resource type="Texture2D" uid="uid://7b4lnf44t3xu" path="res://Assets/plant_potato/potato.png" id="1_hm0xn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iffym"]
 radius = 8.06226
@@ -10,7 +10,7 @@ z_index = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_5vjww")
+texture = ExtResource("1_hm0xn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iffym")
