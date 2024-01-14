@@ -13,6 +13,9 @@ var player: Node2D
 func get_type() -> String:
 	return ""
 
+func _custom_ready() -> void:
+	pass
+
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
