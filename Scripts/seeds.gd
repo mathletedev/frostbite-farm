@@ -6,6 +6,9 @@ extends "item.gd"
 @onready var text_label: RichTextLabel = $RichTextLabel
 @onready var sprite: Sprite2D = $Sprite2D
 
+func get_type() -> String:
+	return "seeds"
+
 func _custom_ready() -> void:
 	text_label.text = str(count)
 
