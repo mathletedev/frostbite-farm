@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=19 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="1_7evox"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/shop.tscn" id="8_kwaj3"]
 [ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
 [ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="11_m37ap"]
+[ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -175,7 +176,6 @@ zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_top7e")
-player_path = NodePath("../Player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -223,10 +223,10 @@ scale = Vector2(1, 1)
 [node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
 z_index = 4
 position = Vector2(150, 0)
-count = 3
-player_path = NodePath("%Player")
-picked_up_scale = 0.8
-picked_up_opacity = 0.8
-y_offset = 30.0
-lerp_speed = 10
-mask = 4
+
+[node name="Box" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+z_index = 9
+texture_filter = 1
+texture = ExtResource("12_qsw6y")
