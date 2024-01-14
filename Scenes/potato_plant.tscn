@@ -15,7 +15,7 @@ script = ExtResource("1_rcjsp")
 stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_0nnoy"), ExtResource("4_ukd3u"), ExtResource("5_wqij7")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
+z_index = 3
 texture_filter = 1
 texture = ExtResource("1_lnjej")
 
