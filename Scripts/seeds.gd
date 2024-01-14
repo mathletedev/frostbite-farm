@@ -20,8 +20,8 @@ func _custom_process(_delta):
 
 		text.text = format(count)
 
-		if count == 0:
-			queue_free()
+		#if count == 0:
+			#queue_free()
 
 func format(x: int) -> String:
 	return "[center]" + str(x) + "[/center]"
