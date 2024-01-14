@@ -14,13 +14,14 @@ func _custom_process(_delta):
 		count -= 1
 
 		var plant: Node2D = plant_scene.instantiate()
-		plant.position = player.position
+		plant.position.x = (int(player.position.x) / 32) * 32 + 16
+		plant.position.y = (int(player.position.y) / 32) * 32 + 16
 		get_tree().root.add_child(plant)
 
 		text.text = format(count)
 
-		if count == 0:
-			queue_free()
+		#if count == 0:
+			#queue_free()
 
 func format(x: int) -> String:
 	return "[center]" + str(x) + "[/center]"
