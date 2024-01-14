@@ -42,6 +42,7 @@ shape = SubResource("CapsuleShape2D_221x0")
 
 [node name="House Interior" type="Sprite2D" parent="."]
 visible = false
+texture_filter = 1
 texture = ExtResource("3_v33lj")
 
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
