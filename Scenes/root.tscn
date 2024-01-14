@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=21 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="1_7evox"]
@@ -6,11 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://y8ht1dknigwf" path="res://Assets/cliff_tileset.png" id="2_bvalk"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
+[ext_resource type="Texture2D" uid="uid://8rs6qjlyqcpr" path="res://Assets/shop_light.png" id="5_8vrgq"]
 [ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
+[ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="6_uwtwk"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://cc0c30h2eqjc4" path="res://Scenes/house.tscn" id="6_w7gb6"]
-[ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
+[ext_resource type="PackedScene" path="res://Scenes/shopkeeper.tscn" id="7_3vk4d"]
 [ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
+[ext_resource type="Texture2D" uid="uid://dr3yustp1r081" path="res://Assets/shop.png" id="10_v5uwk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -131,6 +134,9 @@ sources/2 = SubResource("TileSetAtlasSource_mx7x8")
 sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 sources/1 = SubResource("TileSetAtlasSource_io1c4")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbv80"]
+size = Vector2(62, 63)
+
 [node name="Root" type="Node"]
 
 [node name="Environment" type="Node2D" parent="."]
@@ -161,11 +167,43 @@ layer_1/tile_data = PackedInt32Array(1179641, 262148, 2, 1179642, 262148, 2, 117
 [node name="House" parent="Environment" instance=ExtResource("6_w7gb6")]
 position = Vector2(-19, -140)
 
+[node name="Shop" type="StaticBody2D" parent="Environment"]
+position = Vector2(208, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Shop"]
+visible = false
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_nbv80")
+
+[node name="Sprite2D" type="Sprite2D" parent="Environment/Shop"]
+texture_filter = 1
+texture = ExtResource("10_v5uwk")
+
+[node name="PointLight2D" type="PointLight2D" parent="Environment/Shop"]
+color = Color(0.992157, 0.882353, 0.772549, 1)
+energy = 1.13
+texture = ExtResource("5_8vrgq")
+
+[node name="PointLight2D2" type="PointLight2D" parent="Environment/Shop"]
+position = Vector2(-16, -8)
+scale = Vector2(0.898438, 1.44141)
+color = Color(0.901961, 0.921569, 0.839216, 1)
+energy = 1.5
+texture = ExtResource("6_uwtwk")
+
+[node name="PointLight2D3" type="PointLight2D" parent="Environment/Shop"]
+position = Vector2(17, -5)
+scale = Vector2(0.938477, 1.98783)
+color = Color(0.901961, 0.921569, 0.839216, 1)
+energy = 1.5
+texture = ExtResource("6_uwtwk")
+
+[node name="Shopkeeper" parent="Environment/Shop" instance=ExtResource("7_3vk4d")]
+position = Vector2(-17, 11)
+scale = Vector2(0.615, 0.615)
+
 [node name="CanvasModulate" type="CanvasModulate" parent="Environment"]
 color = Color(0.584314, 0.584314, 0.584314, 1)
-
-[node name="Shop" parent="Environment" instance=ExtResource("8_kwaj3")]
-position = Vector2(191, -39)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 20

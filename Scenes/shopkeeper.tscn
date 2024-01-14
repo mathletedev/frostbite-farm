@@ -17,7 +17,6 @@ texture_filter = 1
 texture = ExtResource("2_gg7w5")
 
 [node name="Interaction Radius" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Radius"]
 position = Vector2(40, 1)
