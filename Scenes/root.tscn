@@ -170,8 +170,8 @@ color = Color(0.901961, 0.921569, 0.839216, 1)
 energy = 1.5
 texture = ExtResource("8_fn8lr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="House"]
-position = Vector2(38.2609, -145.652)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House"]
+polygon = PackedVector2Array(-9.29615, -109.546, -6.98846, -186.469, 36.8577, -217.238, 81.4731, -189.546, 84.55, -109.546)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
