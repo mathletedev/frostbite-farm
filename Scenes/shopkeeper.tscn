@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dos7awdnrsffg"]
+[gd_scene load_steps=13 format=3 uid="uid://dos7awdnrsffg"]
 
 [ext_resource type="Script" path="res://Scripts/shopkeeper.gd" id="1_hif6c"]
 [ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvjdg7ca306mo" path="res://Assets/shop/shop_item_border.png" id="6_sv6bg"]
 [ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="7_1fvmi"]
 [ext_resource type="Texture2D" uid="uid://btqgy6xe8ntse" path="res://Assets/fire_lamp/fire_lamp.png" id="8_6ohrf"]
+[ext_resource type="Texture2D" uid="uid://gggojqd6kdau" path="res://Assets/plant_carrot/carrot_seeds.png" id="8_pm6n0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhman"]
 radius = 105.003
@@ -15,17 +16,7 @@ height = 210.006
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2dgi"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ou77"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t7usl"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_beae8"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb8jw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6qqm5"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lt067"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tavtk"]
 
 [node name="Shopkeeper" type="Node2D"]
 script = ExtResource("1_hif6c")
@@ -73,7 +64,7 @@ offset_right = 934.0
 offset_bottom = 580.0
 texture = ExtResource("5_0eobv")
 
-[node name="ExitButton" type="Button" parent="Shop UI"]
+[node name="Button" type="Button" parent="Shop UI"]
 show_behind_parent = true
 offset_left = 716.0
 offset_top = 144.0
@@ -86,15 +77,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_e2dgi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e2dgi")
 flat = true
 
-[node name="PlayerCoinCounter" type="RichTextLabel" parent="Shop UI"]
-offset_left = 355.0
-offset_top = 356.0
-offset_right = 535.0
-offset_bottom = 380.0
-theme_override_fonts/normal_font = ExtResource("4_6jecp")
-bbcode_enabled = true
-text = "[left]123[/left]"
-
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop UI"]
 offset_left = 472.0
 offset_top = 174.0
@@ -105,108 +87,91 @@ offset_bottom = 478.0
 custom_minimum_size = Vector2(273.855, 510.245)
 layout_mode = 2
 
-[node name="ShopItemBorder" type="Sprite2D" parent="Shop UI/ScrollContainer/Control"]
+[node name="PotatoButton" type="Button" parent="Shop UI/ScrollContainer/Control"]
+offset_left = 4.0
+offset_top = 9.0
+offset_right = 256.0
+offset_bottom = 85.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
+flat = true
+script = ExtResource("1_hif6c")
+
+[node name="Item1" type="Sprite2D" parent="Shop UI/ScrollContainer/Control"]
 position = Vector2(131.25, 46.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
 
-[node name="ItemName" type="Label" parent="Shop UI/ScrollContainer/Control/ShopItemBorder"]
-offset_left = -18.1695
-offset_top = -10.0339
-offset_right = 237.831
-offset_bottom = 20.9661
-scale = Vector2(0.320525, 0.351008)
-theme_override_colors/font_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_colors/font_shadow_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_fonts/font = ExtResource("4_6jecp")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6ou77")
-text = "Potato 
-Seeds 	x3 "
-metadata/_edit_use_anchors_ = true
-
-[node name="PotatoSeedsIcon" type="Sprite2D" parent="Shop UI/ScrollContainer/Control/ShopItemBorder"]
-position = Vector2(-31.548, 0.45198)
-scale = Vector2(0.686916, 0.686916)
+[node name="potato_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Control/Item1"]
 texture = ExtResource("7_1fvmi")
+offset = Vector2(-32, 1)
 
-[node name="Cost" type="Label" parent="Shop UI/ScrollContainer/Control/ShopItemBorder"]
-offset_left = -11.5706
-offset_top = 5.06215
-offset_right = 4.42938
-offset_bottom = 21.0621
-scale = Vector2(0.419576, 0.419576)
-theme_override_colors/font_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_fonts/font = ExtResource("4_6jecp")
-text = "5"
-metadata/_edit_use_anchors_ = true
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control/Item1"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "3 coins"
 
-[node name="BuyPotatoSeeds" type="Button" parent="Shop UI/ScrollContainer/Control/ShopItemBorder"]
-offset_left = -44.565
-offset_top = -12.565
-offset_right = -36.565
-offset_bottom = -4.56497
-scale = Vector2(11.0326, 3.37219)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_t7usl")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_beae8")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_eb8jw")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_6qqm5")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6qqm5")
-flat = true
+[node name="Control2" type="Control" parent="Shop UI/ScrollContainer"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
 
-[node name="Lamp" type="Sprite2D" parent="Shop UI/ScrollContainer/Control"]
-position = Vector2(133, 131)
+[node name="CarrotButton" type="Button" parent="Shop UI/ScrollContainer/Control2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_hif6c")
+
+[node name="Item2" type="Sprite2D" parent="Shop UI/ScrollContainer/Control2"]
+position = Vector2(131.25, 46.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
 
-[node name="Cost" type="Label" parent="Shop UI/ScrollContainer/Control/Lamp"]
-offset_left = -11.5706
-offset_top = 5.06215
-offset_right = 4.42938
-offset_bottom = 21.0621
-scale = Vector2(0.419576, 0.419576)
-theme_override_colors/font_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_fonts/font = ExtResource("4_6jecp")
-text = "15"
-metadata/_edit_use_anchors_ = true
+[node name="carrot_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Control2/Item2"]
+texture = ExtResource("8_pm6n0")
+offset = Vector2(-32, 36)
 
-[node name="ItemName" type="Label" parent="Shop UI/ScrollContainer/Control/Lamp"]
-offset_left = -18.1695
-offset_top = -10.0339
-offset_right = 237.831
-offset_bottom = 20.9661
-scale = Vector2(0.320525, 0.351008)
-theme_override_colors/font_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_colors/font_shadow_color = Color(0.380392, 0.223529, 0.262745, 1)
-theme_override_fonts/font = ExtResource("4_6jecp")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6ou77")
-text = "Heat 
-Lamp"
-metadata/_edit_use_anchors_ = true
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control2/Item2"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "6 coins"
 
-[node name="PotatoSeedsIcon" type="Sprite2D" parent="Shop UI/ScrollContainer/Control/Lamp"]
-position = Vector2(-31.548, 0.45198)
-scale = Vector2(0.443912, 0.443912)
+[node name="Control3" type="Control" parent="Shop UI/ScrollContainer"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
+
+[node name="LampButton" type="Button" parent="Shop UI/ScrollContainer/Control3"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_hif6c")
+
+[node name="Item3" type="Sprite2D" parent="Shop UI/ScrollContainer/Control3"]
+position = Vector2(131.25, 150)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
+
+[node name="fire_lamp" type="Sprite2D" parent="Shop UI/ScrollContainer/Control3/Item3"]
 texture = ExtResource("8_6ohrf")
+offset = Vector2(-32, 36)
 
-[node name="BuyHeatLamp" type="Button" parent="Shop UI/ScrollContainer/Control/Lamp"]
-offset_left = -42.6667
-offset_top = -11.5706
-offset_right = -34.6667
-offset_bottom = -3.57062
-scale = Vector2(10.7271, 3.19139)
-theme_override_styles/normal = SubResource("StyleBoxEmpty_lt067")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_lt067")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_lt067")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_lt067")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_lt067")
-flat = true
-
-[node name="ItemSpawnPos" type="Area2D" parent="."]
-position = Vector2(54, 10)
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control3/Item3"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "20 coins"
 
 [connection signal="area_exited" from="Interaction Radius" to="." method="_on_interaction_radius_area_exited"]
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
 [connection signal="body_exited" from="Interaction Radius" to="." method="_on_interaction_radius_body_exited"]
-[connection signal="pressed" from="Shop UI/ExitButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control/ShopItemBorder/BuyPotatoSeeds" to="." method="_on_buy_potato_seeds_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control/Lamp/BuyHeatLamp" to="." method="_on_buy_heat_lamp_pressed"]
+[connection signal="pressed" from="Shop UI/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Control/PotatoButton" to="." method="_on_potato_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Control2/CarrotButton" to="." method="_on_carrot_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Control3/LampButton" to="." method="_on_carrot_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Control3/LampButton" to="." method="_on_lamp_button_pressed"]

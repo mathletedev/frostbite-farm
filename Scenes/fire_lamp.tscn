@@ -92,6 +92,5 @@ offset_top = -18.0
 offset_right = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-fill_mode = 6
 texture_under = ExtResource("7_wh453")
 texture_progress = ExtResource("8_mfhbd")

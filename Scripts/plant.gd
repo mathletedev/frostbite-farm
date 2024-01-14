@@ -32,10 +32,6 @@ func _process(_delta: float) -> void:
 		growth_timer.start()
 		frozen_timer.start()
 
-		if arrow != null:
-			arrow.queue_free()
-			arrow = null
-
 func _on_area_entered(other: Area2D) -> void:
 	if other.name == "Heat":
 		touching_lamp = true
@@ -45,11 +41,7 @@ func _on_area_entered(other: Area2D) -> void:
 		var warning := get_node_or_null("Warning")
 		if warning != null:
 			warning.queue_free()
-	
-	if is_growing:
-		return
-
-	if other.name == "Interact":
+	elif other.name == "Interact":
 		touching_player = true
 
 		if arrow == null:
