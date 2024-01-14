@@ -46,13 +46,16 @@ func _on_button_pressed():
 func _on_potato_button_pressed():
 	if GameManager.balance >= 3:
 		GameManager.balance -= 3
+		GameManager.update_balance.emit()
 		print("haha no seeds")
 
 func _on_carrot_button_pressed():
 	if GameManager.balance >= 6:
 		GameManager.balance -= 6
+		GameManager.update_balance.emit()
 		print("haha no seeds")
 		
 func _on_lamp_button_pressed():
 	if GameManager.balance >= 100:
 		GameManager.balance -= 100
+		GameManager.update_balance.emit()
