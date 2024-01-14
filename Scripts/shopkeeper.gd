@@ -4,7 +4,6 @@ extends Node
 @onready var ShopUI: CanvasLayer = get_node("Shop UI")
 @onready var PlayerCoinCounter :RichTextLabel = get_node("Shop UI/PlayerCoinCounter")
 @onready var playerCoins = GameManager.playerCoins
-@onready var CoinCountUI: CanvasLayer = get_node("/root/Root/CoinGUI")
 @onready var ItemSpawnPos: Area2D = get_node("ItemSpawnPos")
 
 @onready var PotatoSeeds: Area2D = get_node("/root/Root/PotatoSeeds")
@@ -25,7 +24,6 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("interact(shop)") and inShopRange:
 		ShopUI.visible = true
-		CoinCountUI.visible = false
 	
 	#update coin counter
 	PlayerCoinCounter.text = "[left]" + str(playerCoins) + "[/left]"
@@ -45,13 +43,11 @@ func _on_interaction_radius_body_exited(body):
 		InteractButton.visible = false
 		inShopRange = false
 		ShopUI.visible = false
-		CoinCountUI.visible = true
 	pass 
 
 # closes shop ui
 func _on_button_pressed():
 	ShopUI.visible = false
-	CoinCountUI.visible = true
 	pass 
 
 
@@ -65,7 +61,5 @@ func _on_buy_potato_seeds_pressed():
 func _on_buy_heat_lamp_pressed():
 	if playerCoins >= 20:
 		playerCoins -= 20
-		item = HeatLamp.instance()
-		item.position = ItemSpawnPos.position
-		add_child(item)
+		
 	pass # Replace with function body.
