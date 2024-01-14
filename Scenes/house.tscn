@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7w2cnmdydmil"]
+[gd_scene load_steps=3 format=3 uid="uid://nbp6ua63f31i"]
 
 [ext_resource type="Texture2D" uid="uid://bfr8fni4tr31d" path="res://Scripts/house.png" id="1_mxq2g"]
 [ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="2_rv81c"]
@@ -17,5 +17,6 @@ energy = 1.5
 texture = ExtResource("2_rv81c")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(-36, 159)
 polygon = PackedVector2Array(-6.98846, -109.546, -6.98846, -186.469, 36.8577, -217.238, 81.4731, -189.546, 81.4731, -108.777)
