@@ -1,7 +1,7 @@
 extends "item.gd"
 
 @export var warmth_radius: float = 100
-@export var warmth_colour: Color = "#D9D7A1"
+@export var warmth_colour: Color = "#945A50"
 @export var pulse_rate: float = 0.005
 
 @onready var light: PointLight2D = $PointLight2D
