@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceis700irf5tu"]
+
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="1_kyxbm"]
+[ext_resource type="Script" path="res://Scripts/dialogue.gd" id="2_si5np"]
+
+[node name="Dialogue" type="RichTextLabel"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -482.0
+offset_right = -160.0
+offset_bottom = 81.0
+grow_horizontal = 0
+scale = Vector2(1.5, 1.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("1_kyxbm")
+bbcode_enabled = true
+text = "[right]Hello[/right]"
+script = ExtResource("2_si5np")

@@ -84,6 +84,9 @@ func _on_area_entered(other: Area2D) -> void:
 		arrow = arrow_scene.instantiate()
 		arrow.position.y = -20
 		add_child(arrow)
+	
+	GameManager.dialogue = "Press [Space] to pick up"
+	GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
 	if other.name != "Interact":
@@ -94,3 +97,6 @@ func _on_area_exited(other: Area2D) -> void:
 	if arrow != null:
 		arrow.queue_free()
 		arrow = null
+
+	GameManager.dialogue = ""
+	GameManager.update_dialogue.emit()
