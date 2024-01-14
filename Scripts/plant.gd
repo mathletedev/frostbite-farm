@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var stages: Array[Texture]
+@export var product_scene: PackedScene
 @export var growth_speed: float = 10
 @export var frozen_speed: int = 10
 
@@ -89,4 +90,8 @@ func _on_frozen_timer() -> void:
 		add_child(warning)
 
 	if frozen_countdown == 0:
+		var product = product_scene.instantiate()
+		get_tree().root.add_child(product)
+		product.position = position
+
 		queue_free()

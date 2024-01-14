@@ -1,18 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://bx4riihppopgr"]
+[gd_scene load_steps=8 format=3 uid="uid://bx4riihppopgr"]
 
 [ext_resource type="Texture2D" uid="uid://sc7o3a1ovnfx" path="res://Assets/plant_potato/potato_stage_1.png" id="1_lnjej"]
+<<<<<<< HEAD
 [ext_resource type="Script" path="res://Scripts/potato.gd" id="1_rcjsp"]
 [ext_resource type="Texture2D" uid="uid://d4lng6skxf0na" path="res://Assets/plant_potato/potato_stage_2.png" id="3_0nnoy"]
 [ext_resource type="Texture2D" uid="uid://bjryst43q2bu2" path="res://Assets/plant_potato/potato_stage_3.png" id="4_ukd3u"]
 [ext_resource type="Texture2D" uid="uid://bbfayo24f0t40" path="res://Assets/plant_potato/potato_stage_4.png" id="5_wqij7"]
+=======
+[ext_resource type="Texture2D" uid="uid://d4lng6skxf0na" path="res://Assets/plant_potato/potato_stage_2.png" id="3_weqax"]
+[ext_resource type="Texture2D" uid="uid://bjryst43q2bu2" path="res://Assets/plant_potato/potato_stage_3.png" id="4_y3nyf"]
+[ext_resource type="Texture2D" uid="uid://bbfayo24f0t40" path="res://Assets/plant_potato/potato_stage_4.png" id="5_5805v"]
+[ext_resource type="PackedScene" uid="uid://igc6faugbiyg" path="res://Scenes/potato.tscn" id="6_cw14w"]
+>>>>>>> db3fe8de9b7cec1434bdb2b478b9cb386e450ef1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
 
 [node name="PotatoPlant" type="Area2D"]
 collision_layer = 7
 collision_mask = 7
+<<<<<<< HEAD
 script = ExtResource("1_rcjsp")
 stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_0nnoy"), ExtResource("4_ukd3u"), ExtResource("5_wqij7")])
+=======
+script = ExtResource("1_huxv3")
+stages = Array[Texture]([ExtResource("1_lnjej"), ExtResource("3_weqax"), ExtResource("4_y3nyf"), ExtResource("5_5805v")])
+product_scene = ExtResource("6_cw14w")
+>>>>>>> db3fe8de9b7cec1434bdb2b478b9cb386e450ef1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
