@@ -12,13 +12,14 @@ config_version=5
 
 config/name="Frostbite Farm"
 run/main_scene="res://Scenes/root.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.1", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.133333, 0.180392, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 GameManager="*res://Scripts/game_manager.gd"
+BackgroundMusic="*res://Scenes/background_music.tscn"
 
 [input]
 
