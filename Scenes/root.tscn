@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=16 format=3 uid="uid://02kwyi48jume"]
-=======
-[gd_scene load_steps=14 format=3 uid="uid://02kwyi48jume"]
->>>>>>> 86cb344 (fix polygon edges)
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
@@ -54,7 +50,6 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-<<<<<<< HEAD
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -120,12 +115,9 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_mx7x8")
 sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 
-<<<<<<< HEAD
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qb05b"]
 size = Vector2(62, 95)
 
-=======
->>>>>>> 86cb344 (fix polygon edges)
 [node name="Root" type="Node"]
 
 [node name="Background" type="TextureRect" parent="."]
