@@ -6,8 +6,8 @@ extends Area2D
 @export var lerp_speed = 10
 @export_flags_2d_physics var mask: int = 4
 
-@onready var player: Node2D = get_node("%Player")
-@onready var box: Node2D = get_node("%Box")
+@onready var player: Node2D = get_node("/root/Root/Player")
+@onready var box: Node2D = get_node("/root/Root/Box")
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
 
 var touching_player: bool = false;
