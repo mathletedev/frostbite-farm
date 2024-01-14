@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://dos7awdnrsffg" path="res://Scenes/shopkeeper.tscn" id="4_yidm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uua0u"]
-size = Vector2(62, 63)
+size = Vector2(62, 64)
 
-[node name="Shop" type="Area2D"]
+[node name="Shop" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_uua0u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -36,9 +40,3 @@ texture = ExtResource("3_1ds6a")
 [node name="Shopkeeper" parent="." instance=ExtResource("4_yidm4")]
 position = Vector2(-17, 11)
 scale = Vector2(0.615, 0.615)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 7.5)
-shape = SubResource("RectangleShape2D_uua0u")

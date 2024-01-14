@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
 [ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
 [ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
-[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="11_m37ap"]
+[ext_resource type="PackedScene" uid="uid://clxkd8iwdkmvl" path="res://Scenes/balance.tscn" id="9_qq8l1"]
 [ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
@@ -234,22 +234,13 @@ offset_bottom = 80.0
 grow_horizontal = 0
 texture = ExtResource("9_7gl2j")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
-texture_filter = 1
+[node name="Balance" parent="CanvasLayer/Control" instance=ExtResource("9_qq8l1")]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -1000.0
+offset_left = -410.0
 offset_top = 48.0
-offset_right = -590.0
+offset_right = -290.0
 offset_bottom = 32.0
-grow_horizontal = 0
-scale = Vector2(2, 2)
-theme_override_fonts/normal_font = ExtResource("11_m37ap")
-bbcode_enabled = true
-text = "[right]10[/right]"
-scroll_active = false
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6
