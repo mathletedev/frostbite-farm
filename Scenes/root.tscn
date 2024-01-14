@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=21 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="1_7evox"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
 [ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
-[ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
 [ext_resource type="PackedScene" uid="uid://clxkd8iwdkmvl" path="res://Scenes/balance.tscn" id="9_qq8l1"]
 [ext_resource type="PackedScene" uid="uid://ceis700irf5tu" path="res://Scenes/dialogue.tscn" id="10_ymyaa"]
 [ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
@@ -204,64 +203,18 @@ color = Color(0.584314, 0.584314, 0.584314, 1)
 [node name="Shop" parent="Environment" instance=ExtResource("8_kwaj3")]
 position = Vector2(191, -39)
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Balance" parent="UI" instance=ExtResource("9_qq8l1")]
+
+[node name="Dialogue" parent="UI" instance=ExtResource("10_ymyaa")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 20
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_top7e")
-
-[node name="CoinGUI" type="CanvasLayer" parent="."]
-
-[node name="CanvasLayer#TopRight" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 40.0
-grow_horizontal = 0
-
-[node name="CanvasLayer_TopRight#TextureRect" type="TextureRect" parent="."]
-texture_filter = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -80.0
-offset_top = 16.0
-offset_right = -16.0
-offset_bottom = 80.0
-grow_horizontal = 0
-texture = ExtResource("9_7gl2j")
-
-[node name="CanvasLayer_TopRight#Balance" parent="." instance=ExtResource("9_qq8l1")]
-offset_left = -410.0
-offset_top = 48.0
-offset_right = -290.0
-offset_bottom = 32.0
-text = "[right]0[/right]"
-
-[node name="CanvasLayer#BottomRight" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -56.0
-offset_top = -55.0
-grow_horizontal = 0
-grow_vertical = 0
-
-[node name="CanvasLayer_BottomRight#Dialogue" parent="." instance=ExtResource("10_ymyaa")]
-anchors_preset = 15
-anchor_left = 0.0
-anchor_bottom = 1.0
-offset_left = -1000.0
-offset_top = -25.0
-offset_right = -400.0
-offset_bottom = 0.0
-grow_vertical = 0
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6

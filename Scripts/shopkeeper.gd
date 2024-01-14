@@ -25,11 +25,17 @@ func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
 		inShopRange = true
 
+		GameManager.dialogue = "Press [F] to open shop"
+		GameManager.update_dialogue.emit()
+
 #exit interaction radius of shopkeeper
 func _on_interaction_radius_body_exited(body):
 	if body.name == "Player":
 		inShopRange = false
 		ShopUI.visible = false
+
+		GameManager.dialogue = ""
+		GameManager.update_dialogue.emit()
 
 # closes shop ui
 func _on_button_pressed():
