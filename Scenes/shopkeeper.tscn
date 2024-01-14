@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhman"]
-radius = 92.0
-height = 184.0
+radius = 77.9995
+height = 155.999
 
 [node name="Shopkeeper" type="Node2D"]
 script = ExtResource("1_hif6c")
@@ -17,6 +17,12 @@ texture = ExtResource("2_gg7w5")
 [node name="Interaction Radius" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Radius"]
+position = Vector2(25, 0)
+rotation = -1.57431
 shape = SubResource("CapsuleShape2D_yhman")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]

@@ -13,5 +13,5 @@ func _process(delta):
 
 func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
-		print("player")
+		pass
 	pass # Replace with function body.
