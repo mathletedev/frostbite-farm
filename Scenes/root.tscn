@@ -204,9 +204,9 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_top7e")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CoinGUI" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CoinGUI"]
 layout_mode = 3
 anchors_preset = 1
 anchor_left = 1.0
@@ -215,7 +215,7 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+[node name="TextureRect" type="TextureRect" parent="CoinGUI/Control"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
@@ -228,7 +228,7 @@ offset_bottom = 80.0
 grow_horizontal = 0
 texture = ExtResource("9_7gl2j")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CoinGUI/Control"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
