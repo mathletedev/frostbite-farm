@@ -42,6 +42,7 @@ func _on_button_pressed():
 	ShopUI.visible = false
 	pass 
 
+
 func _on_potato_button_pressed():
 	if GameManager.balance >= 3:
 		GameManager.balance -= 3
@@ -53,5 +54,5 @@ func _on_carrot_button_pressed():
 		print("haha no seeds")
 		
 func _on_lamp_button_pressed():
-	if GameManager.balance >= 20:
-		GameManager.balance -= 20
+	if GameManager.balance >= 100:
+		GameManager.balance -= 100

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dos7awdnrsffg"]
+[gd_scene load_steps=12 format=3 uid="uid://dos7awdnrsffg"]
 
 [ext_resource type="Script" path="res://Scripts/shopkeeper.gd" id="1_hif6c"]
 [ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
@@ -15,8 +15,6 @@ radius = 105.003
 height = 210.006
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2dgi"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tavtk"]
 
 [node name="Shopkeeper" type="Node2D"]
 script = ExtResource("1_hif6c")
@@ -58,15 +56,15 @@ texture = ExtResource("3_odond")
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Shop UI"]
-offset_left = 195.0
-offset_top = 73.0
-offset_right = 934.0
-offset_bottom = 580.0
+offset_left = 249.0
+offset_top = 181.0
+offset_right = 988.0
+offset_bottom = 688.0
 texture = ExtResource("5_0eobv")
 
-[node name="Button" type="Button" parent="Shop UI"]
+[node name="ExitButton" type="Button" parent="Shop UI"]
 show_behind_parent = true
-offset_left = 716.0
+offset_left = 715.0
 offset_top = 144.0
 offset_right = 744.0
 offset_bottom = 167.0
@@ -78,100 +76,89 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_e2dgi")
 flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Shop UI"]
-offset_left = 472.0
-offset_top = 174.0
-offset_right = 748.0
-offset_bottom = 478.0
+offset_left = 532.0
+offset_top = 283.0
+offset_right = 808.0
+offset_bottom = 587.0
 
-[node name="Control" type="Control" parent="Shop UI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510.245)
-layout_mode = 2
-
-[node name="PotatoButton" type="Button" parent="Shop UI/ScrollContainer/Control"]
-offset_left = 4.0
-offset_top = 9.0
-offset_right = 256.0
-offset_bottom = 85.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
-flat = true
-script = ExtResource("1_hif6c")
-
-[node name="Item1" type="Sprite2D" parent="Shop UI/ScrollContainer/Control"]
+[node name="Item1" type="Sprite2D" parent="Shop UI/ScrollContainer"]
 position = Vector2(131.25, 46.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
 
-[node name="potato_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Control/Item1"]
+[node name="potato_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Item1"]
 texture = ExtResource("7_1fvmi")
 offset = Vector2(-32, 1)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control/Item1"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Item1"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "3 coins"
 
-[node name="Control2" type="Control" parent="Shop UI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-
-[node name="CarrotButton" type="Button" parent="Shop UI/ScrollContainer/Control2"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="PotatoButton" type="Button" parent="Shop UI/ScrollContainer/Item1"]
+anchors_preset = -1
+anchor_left = 0.032
+anchor_top = 0.098
+anchor_right = 0.032
+anchor_bottom = 0.098
+offset_left = -47.9986
+offset_top = -17.1473
+offset_right = 42.0014
+offset_bottom = 9.85267
 script = ExtResource("1_hif6c")
 
-[node name="Item2" type="Sprite2D" parent="Shop UI/ScrollContainer/Control2"]
+[node name="Item2" type="Sprite2D" parent="Shop UI/ScrollContainer"]
 position = Vector2(131.25, 46.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
 offset = Vector2(0, 35)
 
-[node name="carrot_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Control2/Item2"]
+[node name="CarrotButton" type="Button" parent="Shop UI/ScrollContainer/Item2"]
+offset_left = -44.9266
+offset_top = 21.7853
+offset_right = 45.0734
+offset_bottom = 48.7853
+script = ExtResource("1_hif6c")
+
+[node name="carrot_seeds" type="Sprite2D" parent="Shop UI/ScrollContainer/Item2"]
 texture = ExtResource("8_pm6n0")
 offset = Vector2(-32, 36)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control2/Item2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Item2"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "6 coins"
 
-[node name="Control3" type="Control" parent="Shop UI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-
-[node name="LampButton" type="Button" parent="Shop UI/ScrollContainer/Control3"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-script = ExtResource("1_hif6c")
-
-[node name="Item3" type="Sprite2D" parent="Shop UI/ScrollContainer/Control3"]
+[node name="Item3" type="Sprite2D" parent="Shop UI/ScrollContainer"]
 position = Vector2(131.25, 150)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
 offset = Vector2(0, 35)
 
-[node name="fire_lamp" type="Sprite2D" parent="Shop UI/ScrollContainer/Control3/Item3"]
+[node name="fire_lamp" type="Sprite2D" parent="Shop UI/ScrollContainer/Item3"]
 texture = ExtResource("8_6ohrf")
 offset = Vector2(-32, 36)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Control3/Item3"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Shop UI/ScrollContainer/Item3"]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "20 coins"
+metadata/_edit_use_anchors_ = true
+
+[node name="LampButton" type="Button" parent="Shop UI/ScrollContainer/Item3"]
+offset_left = -44.9266
+offset_top = 22.5085
+offset_right = 45.0734
+offset_bottom = 49.5085
+script = ExtResource("1_hif6c")
 
 [connection signal="area_exited" from="Interaction Radius" to="." method="_on_interaction_radius_area_exited"]
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
 [connection signal="body_exited" from="Interaction Radius" to="." method="_on_interaction_radius_body_exited"]
-[connection signal="pressed" from="Shop UI/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control/PotatoButton" to="." method="_on_potato_button_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control2/CarrotButton" to="." method="_on_carrot_button_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control3/LampButton" to="." method="_on_carrot_button_pressed"]
-[connection signal="pressed" from="Shop UI/ScrollContainer/Control3/LampButton" to="." method="_on_lamp_button_pressed"]
+[connection signal="pressed" from="Shop UI/ExitButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Item1/PotatoButton" to="." method="_on_potato_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Item2/CarrotButton" to="." method="_on_carrot_button_pressed"]
+[connection signal="pressed" from="Shop UI/ScrollContainer/Item3/LampButton" to="." method="_on_lamp_button_pressed"]
