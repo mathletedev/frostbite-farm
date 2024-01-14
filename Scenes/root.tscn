@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=16 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="PackedScene" uid="uid://biugwsjuhded1" path="res://Scenes/player.tscn" id="1_j0pxn"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfr8fni4tr31d" path="res://Scripts/house.png" id="6_dmf54"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="8_fn8lr"]
+[ext_resource type="Texture2D" uid="uid://vonk4kq6e0gl" path="res://Assets/shop.png" id="10_v5uwk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -49,11 +50,11 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, 16, 16, -16, 16)
 1:0/0 = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, -16, 16)
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0
@@ -113,16 +114,19 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_mx7x8")
 sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qb05b"]
+size = Vector2(62, 95)
+
 [node name="Root" type="Node"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -997.0
-offset_top = -989.0
-offset_right = -149.0
-offset_bottom = 363.0
+offset_left = -878.0
+offset_top = -796.0
+offset_right = -30.0
+offset_bottom = 556.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_p72cy")
@@ -185,3 +189,14 @@ scale = Vector2(1, 1)
 [node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
 z_index = 4
 position = Vector2(150, 0)
+
+[node name="Shop" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Shop"]
+texture_filter = 1
+position = Vector2(311, -98)
+texture = ExtResource("10_v5uwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop"]
+position = Vector2(311, -98.5)
+shape = SubResource("RectangleShape2D_qb05b")
