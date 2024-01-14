@@ -55,6 +55,7 @@ visible = false
 texture = ExtResource("3_odond")
 
 [node name="Shop UI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Shop UI"]
 offset_left = 195.0
