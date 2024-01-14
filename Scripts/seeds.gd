@@ -18,5 +18,6 @@ func _custom_process(_delta):
 			else:
 				text.text = str(count)
 		var plant: Node2D = plant_scene.instantiate()
+		#neal write code to snap to tile
 		plant.position = player.position
 		get_tree().root.add_child(plant)
