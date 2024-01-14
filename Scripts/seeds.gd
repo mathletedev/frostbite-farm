@@ -12,12 +12,10 @@ func _custom_ready() -> void:
 	text.text = format(count)
 
 func _custom_process(_delta):
-	if picked_up && Input.is_action_just_released("interact") && GameManager.can_place == true:
-		count -= 1
-
+	if picked_up && Input.is_action_just_released("interact"):
 		var point: Vector2 = Vector2.ZERO
-		point.x = (float(player.position.x / 32)) * 32 + 16
-		point.y = (float((player.position.y + plant_offset) / 32)) * 32 - 16
+		point.x = (floor(player.position.x / 32)) * 32 + 16
+		point.y = (floor((player.position.y + plant_offset) / 32)) * 32 - 16
 
 		var parameters := PhysicsPointQueryParameters2D.new()
 		parameters.position = point
@@ -26,9 +24,10 @@ func _custom_process(_delta):
 		parameters.collision_mask = mask
 
 		var collisions := get_world_2d().direct_space_state.intersect_point(parameters)
-		print(collisions)
 		if collisions.size() > 0:
 			return
+
+		count -= 1
 
 		var plant: Node2D = plant_scene.instantiate()
 		plant.position = point
