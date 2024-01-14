@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dos7awdnrsffg"]
+[gd_scene load_steps=6 format=3 uid="uid://dos7awdnrsffg"]
 
 [ext_resource type="Script" path="res://Scripts/shopkeeper.gd" id="1_hif6c"]
 [ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
+[ext_resource type="Texture2D" uid="uid://cq3mywi3e4di0" path="res://Assets/button.png" id="3_odond"]
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_6jecp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yhman"]
 radius = 77.9995
@@ -21,8 +23,27 @@ position = Vector2(25, 0)
 rotation = -1.57431
 shape = SubResource("CapsuleShape2D_yhman")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Interact Button" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(-40.13, -18.13)
+scale = Vector2(1.69, 1.69)
+texture = ExtResource("3_odond")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="Interact Button"]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 14.0
+offset_bottom = 14.0
+scale = Vector2(0.365, 0.365)
+theme_override_colors/default_color = Color(0.207843, 0.180392, 0.239216, 1)
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "F"
+
+[node name="PointLight2D" type="PointLight2D" parent="Interact Button"]
+visible = false
+texture = ExtResource("3_odond")
+
+[connection signal="area_exited" from="Interaction Radius" to="." method="_on_interaction_radius_area_exited"]
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
+[connection signal="body_exited" from="Interaction Radius" to="." method="_on_interaction_radius_body_exited"]
