@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ohw5v0hwklat"]
+
+[ext_resource type="Texture2D" uid="uid://ci5y13jqu41of" path="res://Assets/sell.png" id="1_k6uyl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6aee"]
+size = Vector2(32, 32)
+
+[node name="Sell" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_k6uyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q6aee")
