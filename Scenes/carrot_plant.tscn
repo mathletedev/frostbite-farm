@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmgwtmpw74hho"]
+
+[ext_resource type="Script" path="res://Scripts/plant.gd" id="1_qen4h"]
+[ext_resource type="Texture2D" uid="uid://sc7o3a1ovnfx" path="res://Assets/plant_potato/potato_stage_1.png" id="2_dcaps"]
+[ext_resource type="Texture2D" uid="uid://b1v5px5mrtfmm" path="res://Assets/plant_carrot/carrot_stage_1.png" id="2_gkvwf"]
+[ext_resource type="Texture2D" uid="uid://catl8kjskqmla" path="res://Assets/plant_carrot/carrot_stage_2.png" id="3_k2qve"]
+[ext_resource type="Texture2D" uid="uid://geqyf6haaujl" path="res://Assets/plant_carrot/carrot_stage_3.png" id="4_qvm57"]
+[ext_resource type="Texture2D" uid="uid://cdi1ohkbxomek" path="res://Assets/plant_carrot/carrot_stage_4.png" id="5_mrbd8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
+
+[node name="CarrotPlant" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_qen4h")
+stages = Array[Texture]([ExtResource("2_gkvwf"), ExtResource("3_k2qve"), ExtResource("4_qvm57"), ExtResource("5_mrbd8")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("2_dcaps")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p4c17")
+
+[node name="GrowthTimer" type="Timer" parent="."]
+
+[node name="FrozenTimer" type="Timer" parent="."]

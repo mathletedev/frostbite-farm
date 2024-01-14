@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjrq5lqmk4p6f"
-path="res://.godot/imported/shop_item_border.png-e1f8253f2f4c31ba2f43f2301bc9c368.ctex"
+uid="uid://cdi1ohkbxomek"
+path="res://.godot/imported/carrot_stage_4.png-62ca178d6b19223b97bce9b46057e486.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fonts/shop_item_border.png"
-dest_files=["res://.godot/imported/shop_item_border.png-e1f8253f2f4c31ba2f43f2301bc9c368.ctex"]
+source_file="res://Assets/plant_carrot/carrot_stage_4.png"
+dest_files=["res://.godot/imported/carrot_stage_4.png-62ca178d6b19223b97bce9b46057e486.ctex"]
 
 [params]
 

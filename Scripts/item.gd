@@ -5,10 +5,13 @@ extends Area2D
 @export var y_offset: float = 30
 @export var lerp_speed = 10
 @export_flags_2d_physics var mask: int = 4
+@export var sell_price: int
 
-@onready var player: Node2D = get_node("%Player")
-@onready var box: Node2D = get_node("%Box")
+@onready var player: Node2D = get_node("/root/Root/Player")
+@onready var box: Node2D = get_node("/root/Root/Box")
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
+
+const MY_DIALOGUE = "Press [Space] to pick up"
 
 var touching_player: bool = false;
 var picked_up: bool = false;
@@ -31,6 +34,14 @@ func _custom_process(_delta: float) -> void:
 
 func _process(delta: float) -> void:
 	_custom_process(delta)
+
+	if Input.is_action_just_released("sell") && picked_up:
+		GameManager.balance += sell_price
+		GameManager.update_balance.emit()
+		GameManager.dialogue = ""
+		GameManager.update_dialogue.emit()
+
+		queue_free()
 
 	var point: Vector2 = Vector2.ZERO
 	point.x = (floor(player.position.x / 32)) * 32 + 16
@@ -65,14 +76,16 @@ func pick_up(point: Vector2, can_place: bool) -> void:
 	picked_up = !picked_up
 	GameManager.holding = get_type() if picked_up else ""
 
+	if picked_up:
+		GameManager.holding_price = sell_price
+	else:
+		position = point
+		box.visible = false
+
 	scale.x = picked_up_scale if picked_up else 1.0
 	scale.y = scale.x
 	
 	modulate.a = picked_up_opacity if picked_up else 1.0
-
-	if !picked_up:
-		position = point
-		box.visible = false
 
 func _on_area_entered(other: Area2D) -> void:
 	if other.name != "Interact" || picked_up:
@@ -85,7 +98,7 @@ func _on_area_entered(other: Area2D) -> void:
 		arrow.position.y = -20
 		add_child(arrow)
 	
-	GameManager.dialogue = "Press [Space] to pick up"
+	GameManager.dialogue = MY_DIALOGUE
 	GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
@@ -98,5 +111,6 @@ func _on_area_exited(other: Area2D) -> void:
 		arrow.queue_free()
 		arrow = null
 
-	GameManager.dialogue = ""
-	GameManager.update_dialogue.emit()
+	if GameManager.dialogue == MY_DIALOGUE:
+		GameManager.dialogue = ""
+		GameManager.update_dialogue.emit()

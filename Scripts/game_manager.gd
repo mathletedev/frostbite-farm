@@ -3,9 +3,9 @@ extends Node
 const PLACE_OFFSET = 48
 
 var holding: String = ""
-
-var playerCoins = 500
-var balance: int = 0
+var holding_price: int = 0
+var can_sell: bool = true
+var balance: int = 100
 var dialogue: String = ""
 
 signal update_balance

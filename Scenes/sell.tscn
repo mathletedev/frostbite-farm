@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ohw5v0hwklat"]
+
+[ext_resource type="Texture2D" uid="uid://ci5y13jqu41of" path="res://Assets/sell.png" id="1_k6uyl"]
+[ext_resource type="Script" path="res://Scenes/sell.gd" id="1_rv03u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6aee"]
+size = Vector2(32, 32)
+
+[node name="Sell" type="Area2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_rv03u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_k6uyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q6aee")
