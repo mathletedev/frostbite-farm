@@ -9,11 +9,12 @@ extends Area2D
 @onready var frozen_timer: Timer = $FrozenTimer
 @onready var warning_scene: PackedScene = preload("res://Scenes/warning.tscn")
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
+@onready var frozen_countdown: int = frozen_speed
 
 var curr_stage: int = 0
+var is_growing: bool = false
 var touching_player: bool = false
 var touching_lamp: bool = false
-var frozen_countdown: int = frozen_speed
 var arrow: Node2D = null
 
 func _ready() -> void:
@@ -26,6 +27,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("interact") && touching_player && GameManager.holding == "watering_can":
+		is_growing = true
 		growth_timer.start()
 		frozen_timer.start()
 
@@ -46,6 +48,10 @@ func _on_area_entered(other: Area2D) -> void:
 			arrow.position.y = -20
 			add_child(arrow)
 
+		if GameManager.holding == "watering_can" && !is_growing:
+			GameManager.dialogue = "Left click to water"
+			GameManager.update_dialogue.emit()
+
 func _on_area_exited(other: Area2D) -> void:
 	if other.name == "Heat":
 		touching_lamp = false
@@ -53,11 +59,15 @@ func _on_area_exited(other: Area2D) -> void:
 		if curr_stage != 0:
 			frozen_timer.start()
 	elif other.name == "Interact":
-		touching_player = true
+		touching_player = false
 
 		if arrow != null:
 			arrow.queue_free()
 			arrow = null
+
+		if GameManager.holding == "watering_can":
+			GameManager.dialogue = ""
+			GameManager.update_dialogue.emit()
 
 func _on_growth_timer() -> void:
 	curr_stage += 1

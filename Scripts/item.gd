@@ -10,7 +10,7 @@ extends Area2D
 @onready var box: Node2D = get_node("%Box")
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
 
-var can_pick_up: bool = false;
+var touching_player: bool = false;
 var picked_up: bool = false;
 var arrow: Node2D = null
 
@@ -21,6 +21,8 @@ func _custom_ready() -> void:
 	pass
 
 func _ready() -> void:
+	_custom_ready()
+
 	area_entered.connect(_on_area_entered)
 	area_exited.connect(_on_area_exited)
 
@@ -57,7 +59,7 @@ func _physics_process(delta) -> void:
 		position += (player.position + Vector2.UP * y_offset * (-1 if player.velocity.y < 0 else 1) - position) * lerp_speed * delta
 
 func pick_up(point: Vector2, can_place: bool) -> void:
-	if (!picked_up && (!can_pick_up || GameManager.holding != "")) || (picked_up && !can_place):
+	if (!picked_up && (!touching_player || GameManager.holding != "")) || (picked_up && !can_place):
 		return
 	
 	picked_up = !picked_up
@@ -76,19 +78,25 @@ func _on_area_entered(other: Area2D) -> void:
 	if other.name != "Interact" || picked_up:
 		return
 
-	can_pick_up = true
+	touching_player = true
 
 	if arrow == null:
 		arrow = arrow_scene.instantiate()
 		arrow.position.y = -20
 		add_child(arrow)
+	
+	GameManager.dialogue = "Press [Space] to pick up"
+	GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
 	if other.name != "Interact":
 		return
 
-	can_pick_up = false
+	touching_player = false
 
 	if arrow != null:
 		arrow.queue_free()
 		arrow = null
+
+	GameManager.dialogue = ""
+	GameManager.update_dialogue.emit()
