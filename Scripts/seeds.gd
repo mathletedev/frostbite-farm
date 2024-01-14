@@ -22,7 +22,6 @@ func _custom_process(_delta):
 		parameters.collide_with_areas = true
 		parameters.collide_with_bodies = true
 		parameters.collision_mask = mask
-
 		var collisions := get_world_2d().direct_space_state.intersect_point(parameters)
 		if collisions.size() > 0:
 			return
