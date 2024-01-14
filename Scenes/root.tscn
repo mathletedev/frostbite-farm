@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://8cs4ytadxqvi" path="res://Assets/tree 2.png" id="3_oew6d"]
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
-[ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
 [ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
 [ext_resource type="PackedScene" uid="uid://clxkd8iwdkmvl" path="res://Scenes/balance.tscn" id="9_qq8l1"]
 [ext_resource type="PackedScene" uid="uid://ceis700irf5tu" path="res://Scenes/dialogue.tscn" id="10_ymyaa"]
 [ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
+[ext_resource type="PackedScene" uid="uid://c5vu88a170mi8" path="res://Scenes/plants/carrot_seeds.tscn" id="13_rwwqf"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -230,9 +230,8 @@ z_index = 30
 texture_filter = 1
 scale = Vector2(1, 1)
 
-[node name="PotatoSeeds" parent="." instance=ExtResource("6_2w74m")]
-z_index = 4
-position = Vector2(16, -48)
+[node name="PotatoSeeds2" parent="." instance=ExtResource("13_rwwqf")]
+position = Vector2(10, 0)
 
 [node name="Box" type="Sprite2D" parent="."]
 unique_name_in_owner = true
