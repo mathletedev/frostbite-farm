@@ -208,6 +208,7 @@ position = Vector2(191, -39)
 [node name="Balance" parent="UI" instance=ExtResource("9_qq8l1")]
 
 [node name="Dialogue" parent="UI" instance=ExtResource("10_ymyaa")]
+anchors_preset = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 20
