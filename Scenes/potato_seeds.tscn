@@ -1,23 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8vy1e1m7p47l"]
+[gd_scene load_steps=6 format=3 uid="uid://4vdnlj0jep1t"]
 
-[ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_fer6x"]
-[ext_resource type="PackedScene" uid="uid://cmgwtmpw74hho" path="res://Scenes/carrot_plant.tscn" id="2_h7wt2"]
-[ext_resource type="Texture2D" uid="uid://gggojqd6kdau" path="res://Assets/plant_carrot/carrot_seeds.png" id="3_i1xi4"]
-[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_mwjx8"]
+[ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_07ps0"]
+[ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="1_fpb3m"]
+[ext_resource type="PackedScene" uid="uid://u1yk1ox62lrd" path="res://Scenes/potato_plant.tscn" id="2_xcqpf"]
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_5tvla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
 size = Vector2(12, 16)
 
-[node name="CarrotSeeds" type="Area2D"]
+[node name="PotatoSeeds" type="Area2D"]
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("1_fer6x")
-plant_scene = ExtResource("2_h7wt2")
+script = ExtResource("1_07ps0")
+plant_scene = ExtResource("2_xcqpf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 4
 texture_filter = 1
-texture = ExtResource("3_i1xi4")
+texture = ExtResource("1_fpb3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dkwta")
@@ -37,7 +37,7 @@ offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/normal_font = ExtResource("4_mwjx8")
+theme_override_fonts/normal_font = ExtResource("4_5tvla")
 bbcode_enabled = true
 text = "3
 "
