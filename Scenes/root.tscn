@@ -6,8 +6,8 @@
 [ext_resource type="Script" path="res://Scripts/camera.gd" id="3_top7e"]
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/potato_seeds.tscn" id="6_2w74m"]
+[ext_resource type="Texture2D" uid="uid://bfr8fni4tr31d" path="res://Scripts/house.png" id="6_dmf54"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
-[ext_resource type="Texture2D" uid="uid://bcw2fmyelpxjs" path="res://Assets/house.png" id="7_4aomf"]
 [ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="8_fn8lr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
@@ -164,7 +164,7 @@ scale = Vector2(1.3, 1.3)
 [node name="Sprite2D" type="Sprite2D" parent="House"]
 texture_filter = 1
 position = Vector2(37, -155)
-texture = ExtResource("7_4aomf")
+texture = ExtResource("6_dmf54")
 
 [node name="PointLight2D" type="PointLight2D" parent="House"]
 position = Vector2(37, -154)
@@ -174,7 +174,7 @@ energy = 1.5
 texture = ExtResource("8_fn8lr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="House"]
-polygon = PackedVector2Array(-9.29615, -109.546, -6.98846, -186.469, 36.8577, -217.238, 81.4731, -189.546, 84.55, -109.546)
+polygon = PackedVector2Array(-6.98846, -109.546, -6.98846, -186.469, 36.8577, -217.238, 81.4731, -189.546, 81.4731, -108.777)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
