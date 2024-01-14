@@ -2,10 +2,12 @@ extends "item.gd"
 
 @export var plant_scene: PackedScene
 @export var count: int = 3
-@export_flags_2d_physics var mask: int = 4
 
 @onready var text_label: RichTextLabel = $RichTextLabel
 @onready var sprite: Sprite2D = $Sprite2D
+
+func get_type() -> String:
+	return "seeds"
 
 func _custom_ready() -> void:
 	text_label.text = str(count)

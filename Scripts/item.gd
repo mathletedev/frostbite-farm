@@ -43,11 +43,11 @@ func pick_up() -> void:
 	if !picked_up && (!can_pick_up || GameManager.holding != ""):
 		return
 
-	if picked_up:
-		var point: Vector2 = Vector2.ZERO
-		point.x = (floor(player.position.x / 32)) * 32 + 16
-		point.y = (floor((player.position.y + GameManager.PLACE_OFFSET) / 32)) * 32 - 16
+	var point: Vector2 = Vector2.ZERO
+	point.x = (floor(player.position.x / 32)) * 32 + 16
+	point.y = (floor((player.position.y + GameManager.PLACE_OFFSET) / 32)) * 32 - 16
 
+	if picked_up:
 		var parameters := PhysicsPointQueryParameters2D.new()
 		parameters.position = point
 		parameters.collide_with_areas = true
@@ -66,7 +66,7 @@ func pick_up() -> void:
 	modulate.a = picked_up_opacity if picked_up else 1.0
 
 	if !picked_up:
-		position = player.position
+		position = point
 
 func _on_area_entered(other: Area2D) -> void:
 	if other.name != "Interact" || picked_up:
@@ -74,9 +74,10 @@ func _on_area_entered(other: Area2D) -> void:
 
 	can_pick_up = true
 
-	arrow = arrow_scene.instantiate()
-	arrow.position.y = -20
-	add_child(arrow)
+	if arrow == null:
+		arrow = arrow_scene.instantiate()
+		arrow.position.y = -20
+		add_child(arrow)
 
 func _on_area_exited(other: Area2D) -> void:
 	if other.name != "Interact":
@@ -86,3 +87,4 @@ func _on_area_exited(other: Area2D) -> void:
 
 	if arrow != null:
 		arrow.queue_free()
+		arrow = null
