@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="6_uwtwk"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://cc0c30h2eqjc4" path="res://Scenes/house.tscn" id="6_w7gb6"]
-[ext_resource type="PackedScene" path="res://Scenes/shopkeeper.tscn" id="7_3vk4d"]
+[ext_resource type="PackedScene" uid="uid://dos7awdnrsffg" path="res://Scenes/shopkeeper.tscn" id="7_3vk4d"]
 [ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="9_7gl2j"]
 [ext_resource type="Texture2D" uid="uid://dr3yustp1r081" path="res://Assets/shop.png" id="10_v5uwk"]
 
