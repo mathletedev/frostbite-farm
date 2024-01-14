@@ -4,15 +4,14 @@ extends CharacterBody2D
 @export var friction:float = 50
 
 @export var dash_speed: float = 200.0
-@export var dash_time: float = .45
-@export var dash_cooldown: float = .15
+@export var dash_time: float = .75
+@export var dash_cooldown: float = .85
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $DashTimer
 @onready var dash_cooldown_timer: Timer = $DashCooldown
 
 var can_dash = true
-var dash_velocity = Vector2(0,0)
 var input_direction = Vector2(0,0)
 var in_dash = false
 
@@ -21,7 +20,7 @@ func _ready() -> void:
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = dash_velocity + input_direction.normalized() * speed
+	velocity = input_direction.normalized() * speed
 
 	return input_direction
 	
