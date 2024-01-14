@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cxlkfqcaggceq" path="res://Assets/house_light.png" id="6_uwtwk"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
-[ext_resource type="Texture2D" uid="uid://dd0t7myjgn27j" path="res://Assets/coin.png" id="7_4epvh"]
+[ext_resource type="PackedScene" uid="uid://c06dbc8el4lcg" path="res://Scenes/ui.tscn" id="8_rld6e"]
 [ext_resource type="Texture2D" uid="uid://dr3yustp1r081" path="res://Assets/shop.png" id="10_v5uwk"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
@@ -192,20 +192,14 @@ texture = ExtResource("6_uwtwk")
 color = Color(0.584314, 0.584314, 0.584314, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 20
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 script = ExtResource("3_top7e")
 player_path = NodePath("../Player")
 
-[node name="UI" type="Node2D" parent="Camera2D"]
-z_index = 20
-
-[node name="TextureRect" type="TextureRect" parent="Camera2D/UI"]
-texture_filter = 1
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("7_4epvh")
+[node name="UI" parent="Camera2D" instance=ExtResource("8_rld6e")]
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6
