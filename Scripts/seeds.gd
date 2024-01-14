@@ -20,7 +20,7 @@ func _custom_process(_delta):
 		var parameters := PhysicsPointQueryParameters2D.new()
 		parameters.position = point
 		parameters.collide_with_areas = true
-		parameters.collide_with_bodies = false
+		parameters.collide_with_bodies = true
 		parameters.collision_mask = mask
 
 		var collisions := get_world_2d().direct_space_state.intersect_point(parameters)
