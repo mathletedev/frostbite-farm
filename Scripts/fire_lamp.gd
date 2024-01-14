@@ -3,11 +3,18 @@ extends "item.gd"
 @export var warmth_radius: float = 50
 @export var warmth_colour: Color = "#D9D7A1"
 @export var pulse_rate: float = 0.005
+@export var lifetime: int = 20
 
 @onready var light: PointLight2D = $PointLight2D
+@onready var timer: Timer = $Timer
+@onready var bar: TextureProgressBar = $TextureProgressBar
+@onready var lifetime_countdown: int = lifetime
 
 func get_type() -> String:
 	return "fire_lamp"
+
+func _custom_ready() -> void:
+	timer.timeout.connect(_on_timer)
 
 func _draw() -> void:
 	var colour = warmth_colour
@@ -28,3 +35,6 @@ func draw_circle_arc(center, radius, angle_from, angle_to, color):
 
 	for index_point in range(nb_points):
 		draw_line(points_arc[index_point], points_arc[index_point + 1], color, 1)
+
+func _on_timer() -> void:
+	lifetime_countdown -= 1

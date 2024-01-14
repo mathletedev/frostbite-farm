@@ -9,11 +9,11 @@ extends Area2D
 @onready var frozen_timer: Timer = $FrozenTimer
 @onready var warning_scene: PackedScene = preload("res://Scenes/warning.tscn")
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
+@onready var frozen_countdown: int = frozen_speed
 
 var curr_stage: int = 0
 var touching_player: bool = false
 var touching_lamp: bool = false
-var frozen_countdown: int = frozen_speed
 var arrow: Node2D = null
 
 func _ready() -> void:
@@ -53,7 +53,7 @@ func _on_area_exited(other: Area2D) -> void:
 		if curr_stage != 0:
 			frozen_timer.start()
 	elif other.name == "Interact":
-		touching_player = true
+		touching_player = false
 
 		if arrow != null:
 			arrow.queue_free()
