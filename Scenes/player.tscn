@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://biugwsjuhded1"]
+[gd_scene load_steps=17 format=3 uid="uid://biugwsjuhded1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ktue5"]
 [ext_resource type="Texture2D" uid="uid://wll8ttneku5r" path="res://Assets/juan.png" id="2_64i2u"]
@@ -105,25 +105,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_vf3w3"]
-colors = PackedColorArray(0, 0.403922, 1, 1, 1, 1, 1, 0.262745)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_xbnwq"]
-gradient = SubResource("Gradient_vf3w3")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_w2c8t"]
-lifetime_randomness = 0.16
-particle_flag_disable_z = true
-spread = 120.0
-gravity = Vector3(0, 9, 0)
-initial_velocity_min = -250.0
-initial_velocity_max = -100.0
-angular_velocity_min = -50.0
-angular_velocity_max = 59.0
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-color_ramp = SubResource("GradientTexture1D_xbnwq")
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwd2"]
 radius = 6.4
 height = 19.2
@@ -137,16 +118,6 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_donnc")
 animation = &"up"
 autoplay = "idle"
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="AnimatedSprite2D"]
-amount = 3000
-process_material = SubResource("ParticleProcessMaterial_w2c8t")
-lifetime = 10.95
-
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="AnimatedSprite2D"]
-amount = 2500
-process_material = SubResource("ParticleProcessMaterial_w2c8t")
-lifetime = 10.95
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.6, 8.2)
