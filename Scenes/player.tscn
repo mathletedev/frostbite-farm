@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://biugwsjuhded1"]
+[gd_scene load_steps=18 format=3 uid="uid://biugwsjuhded1"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_ktue5"]
 [ext_resource type="Texture2D" uid="uid://wll8ttneku5r" path="res://Assets/juan.png" id="2_64i2u"]
@@ -106,8 +106,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wbwd2"]
-radius = 6.4
-height = 19.2
+radius = 4.0
+height = 10.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_30554"]
+radius = 16.0012
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(5, 5)
@@ -120,10 +123,16 @@ animation = &"up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.6, 8.2)
+position = Vector2(0, 12)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wbwd2")
 
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.2
 
 [node name="DashWait" type="Timer" parent="."]
+
+[node name="Interact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
+shape = SubResource("CircleShape2D_30554")
