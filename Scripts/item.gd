@@ -17,8 +17,8 @@ func _custom_ready() -> void:
 	pass
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	area_entered.connect(_on_area_entered)
+	area_exited.connect(_on_area_exited)
 
 	player = get_node(player_path)
 
@@ -38,7 +38,7 @@ func _physics_process(delta) -> void:
 func pick_up() -> void:
 	if !picked_up && (!can_pick_up || GameManager.holding != ""):
 		return
-
+	
 	picked_up = !picked_up
 	GameManager.holding = get_type() if picked_up else ""
 
@@ -50,10 +50,10 @@ func pick_up() -> void:
 	if !picked_up:
 		position = player.position
 
-func _on_body_entered(other: CollisionObject2D) -> void:
-	if other.name == "Player":
+func _on_area_entered(other: Area2D) -> void:
+	if other.name == "Interact":
 		can_pick_up = true
 
-func _on_body_exited(other: CollisionObject2D) -> void:
-	if other.name == "Player":
+func _on_area_exited(other: Area2D) -> void:
+	if other.name == "Interact":
 		can_pick_up = false
