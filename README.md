@@ -9,4 +9,4 @@ Authors:
 - Neal Wang
 
 Basic movement: https://www.youtube.com/watch?v=KceMokK2qFA \
-Music: *Neon Gaming* by dopestuff
+Music: *White Palace* by Christopher Larkin
