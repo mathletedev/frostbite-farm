@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dos7awdnrsffg"]
+[gd_scene load_steps=14 format=3 uid="uid://dos7awdnrsffg"]
 
 [ext_resource type="Script" path="res://Scripts/shopkeeper.gd" id="1_hif6c"]
 [ext_resource type="Texture2D" uid="uid://bc4hy3a880x42" path="res://Assets/penguin.png" id="2_gg7w5"]
@@ -15,6 +15,10 @@ radius = 105.003
 height = 210.006
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2dgi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ely31"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bb276"]
 
 [node name="Shopkeeper" type="Node2D"]
 script = ExtResource("1_hif6c")
@@ -106,6 +110,12 @@ offset_left = -47.9986
 offset_top = -17.1473
 offset_right = 42.0014
 offset_bottom = 9.85267
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ely31")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_bb276")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bb276")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_bb276")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_bb276")
+flat = true
 script = ExtResource("1_hif6c")
 
 [node name="Item2" type="Sprite2D" parent="Shop UI/ScrollContainer"]
