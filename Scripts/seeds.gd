@@ -2,7 +2,7 @@ extends "item.gd"
 
 @export var plant_scene: PackedScene
 @export var count: int = 3
-@export var plant_offset: int = 32
+@export var plant_offset: int = 48
 @export_flags_2d_physics var mask: int = 4
 
 @onready var text: RichTextLabel = $RichTextLabel
