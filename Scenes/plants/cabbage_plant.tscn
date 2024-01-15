@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://nlrytsvto4ci"]
+
+[ext_resource type="Script" path="res://Scripts/plant.gd" id="1_tn5cg"]
+[ext_resource type="Texture2D" uid="uid://2xak1nobaq0g" path="res://Assets/plant_cabbage/cabbage_stage_1.png" id="2_q74yc"]
+[ext_resource type="Texture2D" uid="uid://cs5b71w6r8g1d" path="res://Assets/plant_cabbage/cabbage_stage_2.png" id="3_3283m"]
+[ext_resource type="Texture2D" uid="uid://bjryst43q2bu2" path="res://Assets/plant_potato/potato_stage_3.png" id="4_hmnwr"]
+[ext_resource type="PackedScene" uid="uid://igc6faugbiyg" path="res://Scenes/plants/potato.tscn" id="6_3d5oc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
+
+[node name="CabbagePlant" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_tn5cg")
+stages = Array[Texture]([ExtResource("2_q74yc"), ExtResource("3_3283m"), ExtResource("4_hmnwr")])
+product_scene = ExtResource("6_3d5oc")
+growth_speed = 30.0
+frozen_speed = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("2_q74yc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p4c17")
+
+[node name="GrowthTimer" type="Timer" parent="."]
+
+[node name="FrozenTimer" type="Timer" parent="."]
+autostart = true

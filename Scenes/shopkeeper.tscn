@@ -55,7 +55,6 @@ visible = false
 texture = ExtResource("3_odond")
 
 [node name="ShopUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="ShopUI"]
 offset_left = 195.0
@@ -81,10 +80,12 @@ flat = true
 offset_left = 472.0
 offset_top = 174.0
 offset_right = 748.0
-offset_bottom = 478.0
+offset_bottom = 477.0
 
 [node name="Container" type="Control" parent="ShopUI/ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 
 [node name="Potato" type="Control" parent="ShopUI/ScrollContainer/Container"]
 custom_minimum_size = Vector2(273.855, 510.245)
@@ -99,12 +100,13 @@ scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("6_sv6bg")
 
 [node name="potato_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Potato"]
-position = Vector2(131.25, 46.75)
+position = Vector2(131.25, 44.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("7_1fvmi")
 offset = Vector2(-32, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Potato"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 61.0
 offset_right = 228.0
@@ -112,6 +114,20 @@ offset_bottom = 101.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "3 coins"
+
+[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Potato"]
+top_level = true
+layout_mode = 0
+offset_left = 475.0
+offset_top = 182.0
+offset_right = 731.0
+offset_bottom = 262.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
+flat = true
 
 [node name="Carrot" type="Control" parent="ShopUI/ScrollContainer/Container"]
 custom_minimum_size = Vector2(273.855, 510)
@@ -127,12 +143,13 @@ texture = ExtResource("6_sv6bg")
 offset = Vector2(0, 35)
 
 [node name="carrot_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Carrot"]
-position = Vector2(131.25, 46.75)
+position = Vector2(131.25, 45.75)
 scale = Vector2(2.76562, 2.76562)
 texture = ExtResource("8_pm6n0")
 offset = Vector2(-32, 36)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Carrot"]
+layout_mode = 0
 offset_left = 100.0
 offset_top = 158.0
 offset_right = 230.0
@@ -141,49 +158,9 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "6 coins"
 
-[node name="Lamp" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 273.855
-offset_bottom = 510.0
-
-[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
-position = Vector2(131.25, 150)
-scale = Vector2(2.76562, 2.76562)
-texture = ExtResource("6_sv6bg")
-offset = Vector2(0, 35)
-
-[node name="fire_lamp" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
-position = Vector2(131.25, 150)
-scale = Vector2(2.76562, 2.76562)
-texture = ExtResource("8_6ohrf")
-offset = Vector2(-32, 36)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Lamp"]
-offset_left = 100.0
-offset_top = 260.0
-offset_right = 263.0
-offset_bottom = 300.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_6jecp")
-text = "100 coins"
-
-[node name="PotatoButton" type="Button" parent="ShopUI"]
+[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Carrot"]
 top_level = true
-offset_left = 475.0
-offset_top = 182.0
-offset_right = 731.0
-offset_bottom = 262.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
-flat = true
-
-[node name="CarrotButton" type="Button" parent="ShopUI"]
-top_level = true
+layout_mode = 0
 offset_left = 475.0
 offset_top = 278.0
 offset_right = 731.0
@@ -195,12 +172,85 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
-[node name="LampButton" type="Button" parent="ShopUI"]
+[node name="Cabbage" type="Control" parent="ShopUI/ScrollContainer/Container"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 273.855
+offset_bottom = 510.0
+
+[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Cabbage"]
+position = Vector2(131.25, 150)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
+
+[node name="fire_lamp" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Cabbage"]
+position = Vector2(131.25, 149)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("8_6ohrf")
+offset = Vector2(-32, 36)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Cabbage"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 260.0
+offset_right = 263.0
+offset_bottom = 300.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "20 coins"
+
+[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Cabbage"]
 top_level = true
+layout_mode = 0
 offset_left = 475.0
 offset_top = 381.0
 offset_right = 731.0
 offset_bottom = 461.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
+flat = true
+
+[node name="Lamp" type="Control" parent="ShopUI/ScrollContainer/Container"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 274.0
+offset_bottom = 510.0
+
+[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
+position = Vector2(131.25, 246)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
+
+[node name="fire_lamp" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
+position = Vector2(131.25, 244)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("8_6ohrf")
+offset = Vector2(-32, 36)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Lamp"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 357.0
+offset_right = 263.0
+offset_bottom = 397.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "100 coins"
+
+[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Lamp"]
+top_level = true
+layout_mode = 0
+offset_left = 475.0
+offset_top = 478.0
+offset_right = 731.0
+offset_bottom = 558.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
