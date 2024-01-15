@@ -34,7 +34,7 @@ func _on_interaction_radius_body_exited(body):
 			GameManager.update_dialogue.emit()
 
 # closes shop ui
-func _on_button_pressed():
+func _on_exit_button_pressed():
 	shop_ui.visible = false
 	pass 
 
@@ -59,14 +59,20 @@ func _on_carrot_button_pressed():
 	var item: Node2D = carrot_seeds.instantiate()
 	get_tree().root.add_child(item)
 	item.position = spawn_pos
-		
+
 func _on_lamp_button_pressed():
 	if GameManager.balance < 100:
 		return
-
 	GameManager.balance -= 100
 	GameManager.update_balance.emit()
 
 	var item: Node2D = fire_lamp.instantiate()
 	get_tree().root.add_child(item)
 	item.position = spawn_pos
+
+
+
+
+
+
+
