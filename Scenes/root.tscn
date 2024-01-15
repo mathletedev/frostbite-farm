@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=28 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Script" path="res://Scenes/escape_menu.gd" id="1_5o43g"]
@@ -165,6 +165,10 @@ sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 sources/1 = SubResource("TileSetAtlasSource_io1c4")
 sources/3 = SubResource("TileSetAtlasSource_u4614")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1u4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ea5qe"]
+
 [node name="Root" type="Node"]
 script = ExtResource("1_5o43g")
 
@@ -211,47 +215,6 @@ position = Vector2(191, -39)
 [node name="Sell" parent="Environment" instance=ExtResource("7_oi3x5")]
 position = Vector2(48, -80)
 
-[node name="EscapeMenu" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="EscapeMenu"]
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.65136, 1.65136)
-
-[node name="Title" type="Sprite2D" parent="EscapeMenu/Control"]
-position = Vector2(13, -51)
-scale = Vector2(1.95313, 1.95313)
-texture = ExtResource("9_pfoye")
-
-[node name="PlayButton" type="Sprite2D" parent="EscapeMenu/Control"]
-position = Vector2(25, 43)
-texture = ExtResource("10_efav7")
-
-[node name="ExitButton" type="Sprite2D" parent="EscapeMenu/Control"]
-position = Vector2(26, 25)
-texture = ExtResource("11_kgkbt")
-
-[node name="ExitButton" type="Button" parent="EscapeMenu/Control/ExitButton"]
-anchors_preset = -1
-anchor_left = 0.278
-anchor_top = 0.773
-anchor_right = 0.278
-anchor_bottom = 0.773
-offset_left = -71.168
-offset_top = -197.888
-offset_right = -63.168
-offset_bottom = -189.888
-
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Balance" parent="UI" instance=ExtResource("9_qq8l1")]
@@ -285,3 +248,65 @@ visible = false
 z_index = 9
 texture_filter = 1
 texture = ExtResource("12_qsw6y")
+
+[node name="EscapeMenu" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="EscapeMenu"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.65136, 1.65136)
+
+[node name="Title" type="Sprite2D" parent="EscapeMenu/Control"]
+position = Vector2(13, -51)
+scale = Vector2(1.95313, 1.95313)
+texture = ExtResource("9_pfoye")
+
+[node name="PlayButton" type="Sprite2D" parent="EscapeMenu/Control"]
+position = Vector2(25, 43)
+texture = ExtResource("10_efav7")
+
+[node name="ResumeButton" type="Button" parent="EscapeMenu/Control/PlayButton"]
+offset_left = -61.0
+offset_top = -21.0
+offset_right = 49.0
+offset_bottom = 30.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v1u4a")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_v1u4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v1u4a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v1u4a")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v1u4a")
+flat = true
+
+[node name="ExitButton" type="Sprite2D" parent="EscapeMenu/Control"]
+position = Vector2(26, 25)
+texture = ExtResource("11_kgkbt")
+
+[node name="ExitButton" type="Button" parent="EscapeMenu/Control/ExitButton"]
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.773
+anchor_right = 0.278
+anchor_bottom = 0.773
+offset_left = -132.168
+offset_top = -138.888
+offset_right = -23.168
+offset_bottom = -86.888
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ea5qe")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ea5qe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ea5qe")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ea5qe")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ea5qe")
+flat = true
+
+[connection signal="pressed" from="EscapeMenu/Control/PlayButton/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="EscapeMenu/Control/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
