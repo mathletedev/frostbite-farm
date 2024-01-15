@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
-[ext_resource type="PackedScene" path="res://Scenes/sell.tscn" id="7_oi3x5"]
+[ext_resource type="PackedScene" uid="uid://ohw5v0hwklat" path="res://Scenes/sell.tscn" id="7_oi3x5"]
 [ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
 [ext_resource type="PackedScene" uid="uid://clxkd8iwdkmvl" path="res://Scenes/balance.tscn" id="9_qq8l1"]
 [ext_resource type="PackedScene" uid="uid://ceis700irf5tu" path="res://Scenes/dialogue.tscn" id="10_ymyaa"]
