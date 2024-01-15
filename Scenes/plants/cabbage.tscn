@@ -9,7 +9,7 @@ radius = 8.06226
 [node name="Cabbage" type="Area2D"]
 z_index = 4
 script = ExtResource("1_epjpw")
-sell_price = 1
+sell_price = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

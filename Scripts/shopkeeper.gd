@@ -99,9 +99,9 @@ func _on_cabbage_button_pressed():
 	item.position = spawn_pos
 
 func _on_lamp_button_pressed():
-	if GameManager.balance < 40:
+	if GameManager.balance < 50:
 		return
-	GameManager.balance -= 40
+	GameManager.balance -= 50
 	GameManager.update_balance.emit()
 
 	var item: Node2D = fire_lamp.instantiate()
