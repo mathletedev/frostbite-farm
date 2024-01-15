@@ -3,11 +3,6 @@ extends Node
 @onready var player_ui: CanvasLayer = get_node("UI")
 @onready var escape_menu: CanvasLayer = get_node("EscapeMenu")
 
-func _ready() -> void:
-	player_ui.visible = false
-
-	get_tree().paused = true
-
 func _process(_delta):
 	if Input.is_action_just_pressed("escape_menu"):
 		player_ui.visible = false

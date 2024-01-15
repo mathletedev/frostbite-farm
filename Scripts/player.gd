@@ -3,9 +3,9 @@ extends CharacterBody2D
 @export var speed = 125
 @export var friction:float = 50
 
-@export var dash_speed: float = 200.0
-@export var dash_time: float = .75
-@export var dash_cooldown: float = .85
+@export var dash_speed: float = 300
+@export var dash_time: float = 1.25
+@export var dash_cooldown: float = 1.5
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var dash_timer: Timer = $DashTimer

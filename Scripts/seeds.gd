@@ -9,6 +9,9 @@ extends "item.gd"
 func get_type() -> String:
 	return "seeds"
 
+func get_dialogue() -> String:
+	return " | Click to plant"
+
 func _custom_ready() -> void:
 	text_label.text = str(count)
 

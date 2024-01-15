@@ -235,7 +235,6 @@ position = Vector2(-48, -80)
 [node name="Balance" parent="UI" instance=ExtResource("9_qq8l1")]
 
 [node name="Dialogue" parent="UI" instance=ExtResource("10_ymyaa")]
-anchors_preset = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 20
@@ -274,6 +273,7 @@ texture_filter = 1
 texture = ExtResource("12_qsw6y")
 
 [node name="EscapeMenu" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Control" type="Control" parent="EscapeMenu"]
 layout_mode = 3

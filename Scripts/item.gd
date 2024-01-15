@@ -20,6 +20,9 @@ var arrow: Node2D = null
 func get_type() -> String:
 	return "item"
 
+func get_dialogue() -> String:
+	return ""
+
 func _custom_ready() -> void:
 	pass
 
@@ -99,7 +102,7 @@ func _on_area_entered(other: Area2D) -> void:
 		arrow.position.y = -20
 		add_child(arrow)
 	
-	GameManager.dialogue = MY_DIALOGUE
+	GameManager.dialogue = MY_DIALOGUE + get_dialogue()
 	GameManager.update_dialogue.emit()
 
 func _on_area_exited(other: Area2D) -> void:
@@ -112,6 +115,6 @@ func _on_area_exited(other: Area2D) -> void:
 		arrow.queue_free()
 		arrow = null
 
-	if GameManager.dialogue == MY_DIALOGUE:
+	if GameManager.dialogue == MY_DIALOGUE + get_dialogue():
 		GameManager.dialogue = ""
 		GameManager.update_dialogue.emit()

@@ -12,7 +12,7 @@ extends Area2D
 @onready var arrow_scene: PackedScene = preload("res://Scenes/arrow.tscn")
 @onready var frozen_countdown: int = frozen_speed
 
-const MY_DIALOGUE: String = "Left click to water"
+const MY_DIALOGUE: String = "Click to water"
 
 var curr_stage: int = 0
 var is_growing: bool = false

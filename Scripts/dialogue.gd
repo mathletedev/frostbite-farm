@@ -5,4 +5,4 @@ func _ready() -> void:
 	GameManager.update_dialogue.connect(update_dialogue)
 
 func update_dialogue() -> void:
-	text = "[right]" + GameManager.dialogue + "[/right]"
+	text = "[center]" + GameManager.dialogue + "[/center]"
