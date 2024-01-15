@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://chvosw1fjx1e5"]
 
-[ext_resource type="Texture2D" uid="uid://b8oq1mepih4cg" path="res://Assets/nealthewheel.png" id="1_0nakr"]
+[ext_resource type="Texture2D" uid="uid://cysrd5tpxenqj" path="res://Assets/tutorial_npc.png" id="1_06pi4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ex7x4"]
 
@@ -9,8 +9,54 @@ z_index = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
-texture = ExtResource("1_0nakr")
+position = Vector2(101, -52)
+texture = ExtResource("1_06pi4")
 offset = Vector2(-100, 50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_ex7x4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CollisionShape2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "Why, Hello there! I didn’t expect to see anyone around in these parts!
+
+Its been so cold and lonely ever since the great global cooling…
+
+Anyways…
+
+Welcome to my farm!
+
+It’s a bit cold out so it might be hard to grow things…
+
+Oh? You don’t know how to grow things?
+
+First, go over to my good friend Charles the penguin. He’s got the best deals for seeds
+
+To move your seeds, press space. To place them, click while on the square you want to place them. 
+
+The seeds won’t grow in the cold though, bring the handy dandy lamp over by using space to pick it up
+
+Place it right next to your seeds to keep them alive by pressing space where you want to put the lamp. 
+
+Make sure you click on the lamp to turn it on
+
+Wait they still aren’t growing? 
+
+…
+
+Pick up the watering can with space and click on each seed to kickstart their growth
+
+Also, make sure to keep the lamp on, it’ll die out in this cold 
+
+Click on the lamp every once in a while to keep it on
+
+Without the lamp, your plants will slowly freeze to death
+
+At the shop, you can buy upgrades and more lamps!
+
+Oh? You don’t have any money?
+
+You can sell your crops in the nifty little sell box!
+
+Anyways, I gotta go… I heard Romania is above freezing this time of year. Have fun!"
