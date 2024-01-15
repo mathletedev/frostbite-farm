@@ -1,31 +1,24 @@
 extends Node
 
-@onready var ShopUI: CanvasLayer = get_node("Shop UI")
-@onready var ItemSpawnPos: Area2D = get_node("ItemSpawnPos")
+@export var spawn_pos: Vector2
 
-@onready var PotatoSeeds: Area2D = get_node("/root/Root/PotatoSeeds")
-@onready var HeatLamp = preload("res://Scenes/fire_lamp.tscn")
+@onready var shop_ui: CanvasLayer = $ShopUI
+@onready var potato_seeds: PackedScene = preload("res://Scenes/plants/potato_seeds.tscn")
+@onready var carrot_seeds: PackedScene = preload("res://Scenes/plants/carrot_seeds.tscn")
+@onready var fire_lamp: PackedScene = preload("res://Scenes/fire_lamp.tscn")
 
 const MY_DIALOGUE = "Press [F] to open shop"
 
-var Player = null
-var inShopRange = false
-var item
+var in_shop_range = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if Input.is_action_just_pressed("interact(shop)") and inShopRange:
-		ShopUI.visible = true
+	if Input.is_action_just_pressed("interact(shop)") and in_shop_range:
+		shop_ui.visible = true
 
 #entered interaction radius of shopkeeper
 func _on_interaction_radius_body_entered(body):
 	if body.name == "Player":
-		inShopRange = true
+		in_shop_range = true
 
 		GameManager.dialogue = MY_DIALOGUE
 		GameManager.update_dialogue.emit()
@@ -33,8 +26,8 @@ func _on_interaction_radius_body_entered(body):
 #exit interaction radius of shopkeeper
 func _on_interaction_radius_body_exited(body):
 	if body.name == "Player":
-		inShopRange = false
-		ShopUI.visible = false
+		in_shop_range = false
+		shop_ui.visible = false
 
 		if GameManager.dialogue == MY_DIALOGUE:
 			GameManager.dialogue = ""
@@ -42,23 +35,38 @@ func _on_interaction_radius_body_exited(body):
 
 # closes shop ui
 func _on_button_pressed():
-	ShopUI.visible = false
+	shop_ui.visible = false
 	pass 
 
-
 func _on_potato_button_pressed():
-	if GameManager.balance >= 3:
-		GameManager.balance -= 3
-		GameManager.update_balance.emit()
-		print("haha no seeds")
+	if GameManager.balance < 3:
+		return
+
+	GameManager.balance -= 3
+	GameManager.update_balance.emit()
+
+	var item: Node2D = potato_seeds.instantiate()
+	get_tree().root.add_child(item)
+	item.position = spawn_pos
 
 func _on_carrot_button_pressed():
-	if GameManager.balance >= 6:
-		GameManager.balance -= 6
-		GameManager.update_balance.emit()
-		print("haha no seeds")
+	if GameManager.balance < 6:
+		return
+
+	GameManager.balance -= 6
+	GameManager.update_balance.emit()
+
+	var item: Node2D = carrot_seeds.instantiate()
+	get_tree().root.add_child(item)
+	item.position = spawn_pos
 		
 func _on_lamp_button_pressed():
-	if GameManager.balance >= 100:
-		GameManager.balance -= 100
-		GameManager.update_balance.emit()
+	if GameManager.balance < 100:
+		return
+
+	GameManager.balance -= 100
+	GameManager.update_balance.emit()
+
+	var item: Node2D = fire_lamp.instantiate()
+	get_tree().root.add_child(item)
+	item.position = spawn_pos
