@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://18f5c236f6ii"]
+
+[ext_resource type="Script" path="res://Scripts/plant.gd" id="1_swva4"]
+[ext_resource type="Texture2D" uid="uid://s43jpbdnc2xp" path="res://Assets/plant_tomato/tomato_stage_1.png" id="2_ktfbj"]
+[ext_resource type="Texture2D" uid="uid://b7loxbwig8ung" path="res://Assets/plant_tomato/tomato_stage_2.png" id="3_8l434"]
+[ext_resource type="Texture2D" uid="uid://5bm22v7hsuui" path="res://Assets/plant_tomato/tomato_stage_3.png" id="4_8q17b"]
+[ext_resource type="Texture2D" uid="uid://6nwlt7hk8b6j" path="res://Assets/plant_tomato/tomato_stage_4.png" id="5_6r8sc"]
+[ext_resource type="PackedScene" uid="uid://vsyshdjd3u00" path="res://Scenes/plants/tomato.tscn" id="6_7ypxm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4c17"]
+
+[node name="TomatoPlant" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_swva4")
+stages = Array[Texture]([ExtResource("2_ktfbj"), ExtResource("3_8l434"), ExtResource("4_8q17b"), ExtResource("5_6r8sc")])
+product_scene = ExtResource("6_7ypxm")
+growth_speed = 20.0
+frozen_speed = 12
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+texture_filter = 1
+texture = ExtResource("2_ktfbj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_p4c17")
+
+[node name="GrowthTimer" type="Timer" parent="."]
+
+[node name="FrozenTimer" type="Timer" parent="."]
+autostart = true
