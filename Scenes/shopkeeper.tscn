@@ -122,10 +122,10 @@ text = "3 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Potato"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 182.0
-offset_right = 731.0
-offset_bottom = 262.0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 259.0
+offset_bottom = 88.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
@@ -165,10 +165,10 @@ text = "6 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Carrot"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 280.0
-offset_right = 731.0
-offset_bottom = 360.0
+offset_left = 4.0
+offset_top = 107.0
+offset_right = 260.0
+offset_bottom = 187.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
@@ -208,10 +208,10 @@ text = "12 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Tomato"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 381.0
-offset_right = 731.0
-offset_bottom = 461.0
+offset_left = 3.0
+offset_top = 209.0
+offset_right = 259.0
+offset_bottom = 289.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
@@ -251,10 +251,10 @@ text = "20 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Cabbage"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 479.0
-offset_right = 731.0
-offset_bottom = 559.0
+offset_left = 3.0
+offset_top = 306.0
+offset_right = 259.0
+offset_bottom = 386.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
@@ -294,10 +294,10 @@ text = "100 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Lamp"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 580.0
-offset_right = 731.0
-offset_bottom = 660.0
+offset_left = 3.0
+offset_top = 406.0
+offset_right = 259.0
+offset_bottom = 486.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
