@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cqy4i6jeoprjd"]
+[gd_scene load_steps=16 format=3 uid="uid://cqy4i6jeoprjd"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_g5aip"]
-[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_idgv4"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_idgv4"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="2_tddry"]
 [ext_resource type="Texture2D" uid="uid://8cs4ytadxqvi" path="res://Assets/tree 2.png" id="3_4qa3c"]
 [ext_resource type="Texture2D" uid="uid://y8ht1dknigwf" path="res://Assets/cliff_tileset.png" id="4_qpe7u"]
 [ext_resource type="Texture2D" uid="uid://dg52sat2ptkfo" path="res://Assets/menu_title.png" id="5_8duyv"]
 [ext_resource type="Texture2D" uid="uid://bq1f1ft4g218t" path="res://Assets/play_button.png" id="7_giauo"]
-[ext_resource type="Texture2D" uid="uid://c8irhmclxw35y" path="res://Assets/exit_button.png" id="8_sxcu5"]
+[ext_resource type="Texture2D" uid="uid://cauojeiurkxr8" path="res://Assets/exit_button.png" id="8_sxcu5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gjav0"]
 texture = ExtResource("1_g5aip")
@@ -15,39 +15,12 @@ texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-4:5/0 = 0
-5:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb7dd"]
 texture = ExtResource("2_tddry")
@@ -92,6 +65,8 @@ sources/1 = SubResource("TileSetAtlasSource_eb7dd")
 sources/2 = SubResource("TileSetAtlasSource_gyoxo")
 sources/3 = SubResource("TileSetAtlasSource_m6m35")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uloc0"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knqnn"]
 
 [node name="MainMenu" type="Node2D"]
@@ -127,8 +102,16 @@ position = Vector2(585, 345)
 texture = ExtResource("7_giauo")
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/PlayButton"]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = -62.0
+offset_top = -21.0
+offset_right = 48.0
+offset_bottom = 30.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uloc0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_uloc0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_uloc0")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_uloc0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uloc0")
+flat = true
 
 [node name="ExitButton" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(585, 328)
