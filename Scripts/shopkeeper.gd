@@ -55,10 +55,10 @@ func _on_exit_button_pressed():
 	pass 
 
 func _on_potato_button_pressed():
-	if GameManager.balance < 3:
+	if GameManager.balance < 2:
 		return
 
-	GameManager.balance -= 3
+	GameManager.balance -= 2
 	GameManager.update_balance.emit()
 
 	var item: Node2D = potato_seeds.instantiate()
