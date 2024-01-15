@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Frostbite Farm"
-run/main_scene="res://Scenes/main_menu.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+run/main_scene="res://Scenes/root.tscn"
+config/features=PackedStringArray("4.1", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.133333, 0.180392, 1)
 config/icon="res://icon.svg"
 
