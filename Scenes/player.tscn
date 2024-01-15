@@ -130,9 +130,12 @@ shape = SubResource("CapsuleShape2D_wbwd2")
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.2
 
-[node name="DashWait" type="Timer" parent="."]
+[node name="DashCooldown" type="Timer" parent="."]
 
 [node name="Interact" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interact"]
 shape = SubResource("CircleShape2D_30554")
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="DashCooldown" to="." method="_on_dash_cooldown_timeout"]
