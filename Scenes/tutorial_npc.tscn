@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chvosw1fjx1e5"]
+
+[ext_resource type="Texture2D" uid="uid://b8oq1mepih4cg" path="res://Assets/nealthewheel.png" id="1_0nakr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ex7x4"]
+
+[node name="TutorialNpc" type="Node2D"]
+z_index = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+texture = ExtResource("1_0nakr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ex7x4")

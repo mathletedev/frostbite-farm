@@ -55,7 +55,6 @@ visible = false
 texture = ExtResource("3_odond")
 
 [node name="ShopUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="ShopUI"]
 offset_left = 195.0
@@ -83,16 +82,95 @@ offset_top = 174.0
 offset_right = 748.0
 offset_bottom = 478.0
 
-[node name="Potato" type="Control" parent="ShopUI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510.245)
+[node name="Container" type="Control" parent="ShopUI/ScrollContainer"]
 layout_mode = 2
 
-[node name="PotatoButton" type="Button" parent="ShopUI/ScrollContainer/Potato"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 9.0
-offset_right = 256.0
-offset_bottom = 85.0
+[node name="Potato" type="Control" parent="ShopUI/ScrollContainer/Container"]
+custom_minimum_size = Vector2(273.855, 510.245)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 273.855
+offset_bottom = 510.245
+
+[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Potato"]
+position = Vector2(131.25, 46.75)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+
+[node name="potato_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Potato"]
+position = Vector2(131.25, 46.75)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("7_1fvmi")
+offset = Vector2(-32, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Potato"]
+offset_left = 131.25
+offset_top = 46.75
+offset_right = 171.25
+offset_bottom = 86.75
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "3 coins"
+
+[node name="Carrot" type="Control" parent="ShopUI/ScrollContainer/Container"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 273.855
+offset_bottom = 510.0
+
+[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Carrot"]
+position = Vector2(131.25, 46.75)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
+
+[node name="carrot_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Carrot"]
+position = Vector2(131.25, 46.75)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("8_pm6n0")
+offset = Vector2(-32, 36)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Carrot"]
+offset_left = 131.25
+offset_top = 46.75
+offset_right = 171.25
+offset_bottom = 86.75
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "6 coins"
+
+[node name="Lamp" type="Control" parent="ShopUI/ScrollContainer/Container"]
+custom_minimum_size = Vector2(273.855, 510)
+layout_mode = 2
+anchors_preset = 0
+offset_right = 273.855
+offset_bottom = 510.0
+
+[node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
+position = Vector2(131.25, 150)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("6_sv6bg")
+offset = Vector2(0, 35)
+
+[node name="fire_lamp" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
+position = Vector2(131.25, 150)
+scale = Vector2(2.76562, 2.76562)
+texture = ExtResource("8_6ohrf")
+offset = Vector2(-32, 36)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Container/Lamp"]
+offset_left = 131.25
+offset_top = 150.0
+offset_right = 171.25
+offset_bottom = 190.0
+theme_override_fonts/normal_font = ExtResource("4_6jecp")
+text = "20 coins"
+
+[node name="PotatoButton" type="Button" parent="ShopUI"]
+top_level = true
+offset_left = 475.0
+offset_top = 182.0
+offset_right = 731.0
+offset_bottom = 262.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
@@ -100,74 +178,31 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
-[node name="Item1" type="Sprite2D" parent="ShopUI/ScrollContainer/Potato"]
-position = Vector2(131.25, 46.75)
-scale = Vector2(2.76562, 2.76562)
-texture = ExtResource("6_sv6bg")
+[node name="CarrotButton" type="Button" parent="ShopUI"]
+top_level = true
+offset_left = 475.0
+offset_top = 278.0
+offset_right = 731.0
+offset_bottom = 358.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
+flat = true
 
-[node name="potato_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Potato/Item1"]
-texture = ExtResource("7_1fvmi")
-offset = Vector2(-32, 1)
+[node name="LampButton" type="Button" parent="ShopUI"]
+top_level = true
+offset_left = 475.0
+offset_top = 381.0
+offset_right = 731.0
+offset_bottom = 461.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tavtk")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
+flat = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Potato/Item1"]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("4_6jecp")
-text = "3 coins"
-
-[node name="Carrot" type="Control" parent="ShopUI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Carrot"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Item2" type="Sprite2D" parent="ShopUI/ScrollContainer/Carrot"]
-position = Vector2(131.25, 46.75)
-scale = Vector2(2.76562, 2.76562)
-texture = ExtResource("6_sv6bg")
-offset = Vector2(0, 35)
-
-[node name="carrot_seeds" type="Sprite2D" parent="ShopUI/ScrollContainer/Carrot/Item2"]
-texture = ExtResource("8_pm6n0")
-offset = Vector2(-32, 36)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Carrot/Item2"]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("4_6jecp")
-text = "6 coins"
-
-[node name="Lamp" type="Control" parent="ShopUI/ScrollContainer"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-
-[node name="Button" type="Button" parent="ShopUI/ScrollContainer/Lamp"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-
-[node name="Item3" type="Sprite2D" parent="ShopUI/ScrollContainer/Lamp"]
-position = Vector2(131.25, 150)
-scale = Vector2(2.76562, 2.76562)
-texture = ExtResource("6_sv6bg")
-offset = Vector2(0, 35)
-
-[node name="fire_lamp" type="Sprite2D" parent="ShopUI/ScrollContainer/Lamp/Item3"]
-texture = ExtResource("8_6ohrf")
-offset = Vector2(-32, 36)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="ShopUI/ScrollContainer/Lamp/Item3"]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("4_6jecp")
-text = "20 coins"
-
-[connection signal="area_exited" from="Interaction Radius" to="." method="_on_interaction_radius_area_exited"]
 [connection signal="body_entered" from="Interaction Radius" to="." method="_on_interaction_radius_body_entered"]
 [connection signal="body_exited" from="Interaction Radius" to="." method="_on_interaction_radius_body_exited"]
-[connection signal="pressed" from="ShopUI/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="ShopUI/ScrollContainer/Carrot/Button" to="." method="_on_carrot_button_pressed"]
-[connection signal="pressed" from="ShopUI/ScrollContainer/Lamp/Button" to="." method="_on_lamp_button_pressed"]

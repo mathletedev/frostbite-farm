@@ -3,6 +3,10 @@ extends Node
 @export var spawn_pos: Vector2
 
 @onready var shop_ui: CanvasLayer = $ShopUI
+@onready var exit_button: Button = $ShopUI/Button
+@onready var potato_button: Button = $ShopUI/PotatoButton
+@onready var carrot_button: Button = $ShopUI/CarrotButton
+@onready var lamp_button: Button = $ShopUI/LampButton
 @onready var potato_seeds: PackedScene = preload("res://Scenes/plants/potato_seeds.tscn")
 @onready var carrot_seeds: PackedScene = preload("res://Scenes/plants/carrot_seeds.tscn")
 @onready var fire_lamp: PackedScene = preload("res://Scenes/fire_lamp.tscn")
@@ -10,6 +14,12 @@ extends Node
 const MY_DIALOGUE = "Press [F] to open shop"
 
 var in_shop_range = false
+
+func _ready() -> void:
+	exit_button.pressed.connect(_on_exit_button_pressed)
+	potato_button.pressed.connect(_on_potato_button_pressed)
+	carrot_button.pressed.connect(_on_carrot_button_pressed)
+	lamp_button.pressed.connect(_on_lamp_button_pressed)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact(shop)") and in_shop_range:
@@ -34,7 +44,7 @@ func _on_interaction_radius_body_exited(body):
 			GameManager.update_dialogue.emit()
 
 # closes shop ui
-func _on_button_pressed():
+func _on_exit_button_pressed():
 	shop_ui.visible = false
 	pass 
 
@@ -50,6 +60,7 @@ func _on_potato_button_pressed():
 	item.position = spawn_pos
 
 func _on_carrot_button_pressed():
+	print("carrot")
 	if GameManager.balance < 6:
 		return
 
@@ -59,11 +70,10 @@ func _on_carrot_button_pressed():
 	var item: Node2D = carrot_seeds.instantiate()
 	get_tree().root.add_child(item)
 	item.position = spawn_pos
-		
+
 func _on_lamp_button_pressed():
 	if GameManager.balance < 100:
 		return
-
 	GameManager.balance -= 100
 	GameManager.update_balance.emit()
 
