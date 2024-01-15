@@ -18,7 +18,7 @@ var picked_up: bool = false;
 var arrow: Node2D = null
 
 func get_type() -> String:
-	return ""
+	return "item"
 
 func _custom_ready() -> void:
 	pass
@@ -40,6 +40,7 @@ func _process(delta: float) -> void:
 		GameManager.update_balance.emit()
 		GameManager.dialogue = ""
 		GameManager.update_dialogue.emit()
+		GameManager.holding = ""
 
 		queue_free()
 
