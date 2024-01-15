@@ -312,7 +312,7 @@ offset_right = 263.0
 offset_bottom = 499.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_6jecp")
-text = "50 coins"
+text = "100 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Lamp"]
 layout_mode = 0
