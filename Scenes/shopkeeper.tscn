@@ -57,7 +57,6 @@ visible = false
 texture = ExtResource("3_odond")
 
 [node name="ShopUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="ShopUI"]
 anchors_preset = 8
