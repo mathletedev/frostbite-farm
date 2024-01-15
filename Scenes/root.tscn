@@ -217,7 +217,7 @@ color = Color(0.584314, 0.584314, 0.584314, 1)
 position = Vector2(191, -39)
 
 [node name="Sell" parent="Environment" instance=ExtResource("7_oi3x5")]
-position = Vector2(48, -80)
+position = Vector2(-48, -80)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Environment"]
 modulate = Color(0.0117647, 0.0117647, 0.0117647, 1)
@@ -244,10 +244,10 @@ script = ExtResource("3_top7e")
 
 [node name="WateringCan" parent="." instance=ExtResource("4_ajff6")]
 z_index = 6
-position = Vector2(16, -80)
+position = Vector2(8, -108)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-position = Vector2(-48, -80)
+position = Vector2(8, -136)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
 unique_name_in_owner = true
