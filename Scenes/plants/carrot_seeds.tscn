@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_lrwqt"]
 [ext_resource type="PackedScene" uid="uid://dabiybrhhst2q" path="res://Scenes/plants/carrot_plant.tscn" id="2_mktm3"]
-[ext_resource type="Texture2D" uid="uid://d4cdtnqi14hd6" path="res://Assets/plant_cabbage/cabbage_seeds.png" id="3_a05m3"]
+[ext_resource type="Texture2D" uid="uid://gggojqd6kdau" path="res://Assets/plant_carrot/carrot_seeds.png" id="3_4tm65"]
 [ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_py3el"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
@@ -18,7 +18,7 @@ count = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("3_a05m3")
+texture = ExtResource("3_4tm65")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dkwta")

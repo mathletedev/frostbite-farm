@@ -1,13 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://chvosw1fjx1e5"]
+[gd_scene load_steps=6 format=3 uid="uid://chvosw1fjx1e5"]
 
 [ext_resource type="Texture2D" uid="uid://cysrd5tpxenqj" path="res://Assets/tutorial_npc.png" id="1_06pi4"]
 [ext_resource type="Script" path="res://Scripts/tutorial.gd" id="1_um7g3"]
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="3_aluu0"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ex7x4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t4df4"]
+size = Vector2(14, 31)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3axd2"]
 
 [node name="TutorialNpc" type="Area2D"]
 z_index = 3
 script = ExtResource("1_um7g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_t4df4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
@@ -15,55 +23,70 @@ position = Vector2(101, -52)
 texture = ExtResource("1_06pi4")
 offset = Vector2(-100, 50)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ex7x4")
+[node name="UI" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CollisionShape2D"]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TextureRect" type="TextureRect" parent="UI"]
+modulate = Color(0.207843, 0.207843, 0.207843, 0.654902)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -306.5
+offset_top = -230.0
+offset_right = 306.5
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_3axd2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -293.5
+offset_top = -216.0
+offset_right = 293.5
+offset_bottom = 216.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/ScrollContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/normal_font = ExtResource("3_aluu0")
 text = "Why, Hello there! I didn’t expect to see anyone around in these parts!
 
-Its been so cold and lonely ever since the great global cooling…
+It's been so cold and lonely ever since the great global cooling…
 
-Anyways…
+Anyways… 
 
 Welcome to my farm!
 
-It’s a bit cold out so it might be hard to move around…
+Use WASD or arrow keys to move! Use shift to dash!
 
-WASD or arrow keys will help you move around in these rough conditions. Hold shift while pressing any of those keys to briefly dash in that direction.
+It’s a bit cold out so it might be hard to grow things…
 
-Oh? You don’t know how to grow things?
+Oh? You don’t know how to grow things? First, go over to my good friend Charles the Penguin. He’s got the best deals for seeds.
 
-First, go over to my good friend Charles the penguin. He’s got the best deals for seeds
+To move your seeds, press space. To place them, click on the square you want to place them.
 
-To move your seeds, press space. To place them, click while on the square you want to place them. 
+The seeds won’t grow in the cold though, bring the handy dandy lamp over by using space to pick it up. Place it next to your seeds to keep them alive and make sure you click on the lamp to turn it on.
 
-The seeds won’t grow in the cold though, bring the handy dandy lamp over by using space to pick it up
+Wait they still aren’t growing? …
 
-Place it right next to your seeds to keep them alive by pressing space where you want to put the lamp. 
+Pick up the watering can with space and click on each seed to kickstart their growth.
 
-Make sure you click on the lamp to turn it on
+Also, make sure to keep the lamp on, it’ll die out in this cold. Click on the lamp every once in a while to keep it on. Without the lamp, your plants will slowly freeze to death.
 
-Wait they still aren’t growing? 
+At the shop, you can buy more seeds and more lamps!
 
-…
+Oh? You don’t have any money? You can sell your crops in the nifty little sell box!
 
-Pick up the watering can with space and click on each seed to kickstart their growth
-
-Also, make sure to keep the lamp on, they’ll die out in this cold 
-
-Click on the lamp every once in a while to keep it on
-
-Without the lamp, your plants will slowly freeze to death
-
-At the shop, you can buy upgrades and more lamps!
-
-Oh? You don’t have any money?
-
-You can sell your crops in the nifty little sell box!
-
-Anyways, I gotta go… I heard Romania is above freezing this time of year. Have fun!
-
---A message from the authors, Neal Wang, Peter Liu, Charles Liu, and Eric Du---
-This game is developed for PC, optimally 1920 by 1080 px. All of our pixel art was handmade during the duration of the GameJam. Enjoy!"
+Anyways, I gotta go… I heard Romania is above-freezing this time of year. Have fun!"
