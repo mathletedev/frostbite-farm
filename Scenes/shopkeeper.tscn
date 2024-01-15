@@ -57,7 +57,6 @@ visible = false
 texture = ExtResource("3_odond")
 
 [node name="ShopUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="TextureRect" type="TextureRect" parent="ShopUI"]
 offset_left = 195.0
@@ -93,11 +92,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 
 [node name="Potato" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510.245)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 273.855
-offset_bottom = 510.245
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Potato"]
 position = Vector2(131.25, 46.75)
@@ -121,7 +121,6 @@ theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "3 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Potato"]
-top_level = true
 layout_mode = 0
 offset_left = 475.0
 offset_top = 182.0
@@ -135,11 +134,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
 [node name="Carrot" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 273.855
-offset_bottom = 510.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Carrot"]
 position = Vector2(131.25, 48.75)
@@ -164,7 +164,6 @@ theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "6 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Carrot"]
-top_level = true
 layout_mode = 0
 offset_left = 475.0
 offset_top = 280.0
@@ -178,11 +177,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
 [node name="Tomato" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 3
-anchors_preset = 0
-offset_right = 273.855
-offset_bottom = 510.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Tomato"]
 position = Vector2(131.25, 150)
@@ -207,7 +207,6 @@ theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "12 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Tomato"]
-top_level = true
 layout_mode = 0
 offset_left = 475.0
 offset_top = 381.0
@@ -221,11 +220,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
 [node name="Cabbage" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 273.855
-offset_bottom = 510.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Cabbage"]
 position = Vector2(131.25, 248)
@@ -250,7 +250,6 @@ theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "20 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Cabbage"]
-top_level = true
 layout_mode = 0
 offset_left = 475.0
 offset_top = 479.0
@@ -264,11 +263,12 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_tavtk")
 flat = true
 
 [node name="Lamp" type="Control" parent="ShopUI/ScrollContainer/Container"]
-custom_minimum_size = Vector2(273.855, 510)
-layout_mode = 2
-anchors_preset = 0
-offset_right = 274.0
-offset_bottom = 510.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Border" type="Sprite2D" parent="ShopUI/ScrollContainer/Container/Lamp"]
 position = Vector2(131.25, 348)
@@ -293,7 +293,6 @@ theme_override_fonts/normal_font = ExtResource("4_6jecp")
 text = "100 coins"
 
 [node name="Button" type="Button" parent="ShopUI/ScrollContainer/Container/Lamp"]
-top_level = true
 layout_mode = 0
 offset_left = 475.0
 offset_top = 580.0
