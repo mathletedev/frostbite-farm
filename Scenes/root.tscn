@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=30 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Script" path="res://Scenes/escape_menu.gd" id="1_5o43g"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ceis700irf5tu" path="res://Scenes/dialogue.tscn" id="10_ymyaa"]
 [ext_resource type="Texture2D" uid="uid://cauojeiurkxr8" path="res://Assets/exit_button.png" id="11_kgkbt"]
 [ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
+[ext_resource type="AudioStream" uid="uid://dl1abvtedvp1i" path="res://Assets/Audio/Wind.mp3" id="16_a8d66"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -165,14 +166,9 @@ sources/4 = SubResource("TileSetAtlasSource_xtvv7")
 sources/1 = SubResource("TileSetAtlasSource_io1c4")
 sources/3 = SubResource("TileSetAtlasSource_u4614")
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ym8k1"]
-emission_shape = 3
-emission_box_extents = Vector3(3000, 1, 1)
-particle_flag_disable_z = true
-gravity = Vector3(0, 98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-color = Color(0.909804, 0.909804, 0.909804, 1)
+[sub_resource type="CanvasTexture" id="CanvasTexture_e5qns"]
+specular_color = Color(0, 0.329412, 0.329412, 1)
+texture_filter = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1u4a"]
 
@@ -229,6 +225,15 @@ position = Vector2(191, -39)
 [node name="Sell" parent="Environment" instance=ExtResource("7_oi3x5")]
 position = Vector2(-48, -80)
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Environment"]
+modulate = Color(0.0117647, 0.0117647, 0.0117647, 1)
+z_index = 100
+scale = Vector2(1000, 1000)
+amount = 10000
+texture = SubResource("CanvasTexture_e5qns")
+lifetime = 120.0
+speed_scale = 7.33
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="Balance" parent="UI" instance=ExtResource("9_qq8l1")]
@@ -262,6 +267,7 @@ position = Vector2(8, -136)
 unique_name_in_owner = true
 z_index = 30
 texture_filter = 1
+position = Vector2(-2, -3)
 scale = Vector2(1, 1)
 
 [node name="Box" type="Sprite2D" parent="."]
@@ -329,6 +335,11 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_ea5qe")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_ea5qe")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ea5qe")
 flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_a8d66")
+volume_db = -15.928
+autoplay = true
 
 [connection signal="pressed" from="EscapeMenu/Control/PlayButton/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="EscapeMenu/Control/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]

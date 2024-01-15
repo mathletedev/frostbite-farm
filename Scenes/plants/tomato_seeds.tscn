@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://di4tgx5mf60jf"]
+[gd_scene load_steps=6 format=3 uid="uid://c4hoy8y4yt1u0"]
 
 [ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_8nm7n"]
-[ext_resource type="PackedScene" uid="uid://18f5c236f6ii" path="res://Scenes/plants/tomato_plant.tscn" id="2_k1d0i"]
-[ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="3_enc1k"]
+[ext_resource type="PackedScene" path="res://Scenes/plants/tomato_plant.tscn" id="2_k1d0i"]
+[ext_resource type="Texture2D" uid="uid://wbrxqfu6o4lr" path="res://Assets/plant_tomato/tomato_seeds.png" id="3_oulsa"]
 [ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_4t3lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
@@ -19,7 +19,7 @@ count = 6
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 4
 texture_filter = 1
-texture = ExtResource("3_enc1k")
+texture = ExtResource("3_oulsa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dkwta")
