@@ -92,16 +92,30 @@ color = Color(0.584314, 0.584314, 0.584314, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Title" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(572, 248)
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(13, -51)
 scale = Vector2(1.95313, 1.95313)
 texture = ExtResource("5_8duyv")
 
-[node name="PlayButton" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(585, 345)
+[node name="PlayButton" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(25, 43)
 texture = ExtResource("7_giauo")
 
-[node name="PlayButton" type="Button" parent="CanvasLayer/PlayButton"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/Control/PlayButton"]
 offset_left = -62.0
 offset_top = -21.0
 offset_right = 48.0
@@ -112,12 +126,13 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_uloc0")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_uloc0")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_uloc0")
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[node name="ExitButton" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(585, 328)
+[node name="ExitButton" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(26, 25)
 texture = ExtResource("8_sxcu5")
 
-[node name="ExitButton" type="Button" parent="CanvasLayer/ExitButton"]
+[node name="ExitButton" type="Button" parent="CanvasLayer/Control/ExitButton"]
 offset_left = -60.0
 offset_top = 60.0
 offset_right = 46.0
@@ -128,6 +143,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_knqnn")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_knqnn")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_knqnn")
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[connection signal="pressed" from="CanvasLayer/PlayButton/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/PlayButton/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/ExitButton/ExitButton" to="." method="_on_exit_button_pressed"]
