@@ -6,10 +6,12 @@ extends Node
 @onready var exit_button: Button = $ShopUI/Button
 @onready var potato_button: Button = $ShopUI/ScrollContainer/Container/Potato/Button
 @onready var carrot_button: Button = $ShopUI/ScrollContainer/Container/Carrot/Button
+@onready var tomato_button: Button = $ShopUI/ScrollContainer/Container/Tomato/Button
 @onready var cabbage_button: Button = $ShopUI/ScrollContainer/Container/Cabbage/Button
 @onready var lamp_button: Button = $ShopUI/ScrollContainer/Container/Lamp/Button
 @onready var potato_seeds: PackedScene = preload("res://Scenes/plants/potato_seeds.tscn")
 @onready var carrot_seeds: PackedScene = preload("res://Scenes/plants/carrot_seeds.tscn")
+@onready var tomato_seeds: PackedScene = preload("res://Scenes/plants/tomato_seeds.tscn")
 @onready var cabbage_seeds: PackedScene = preload("res://Scenes/plants/cabbage_seeds.tscn")
 @onready var fire_lamp: PackedScene = preload("res://Scenes/fire_lamp.tscn")
 
@@ -21,6 +23,7 @@ func _ready() -> void:
 	exit_button.pressed.connect(_on_exit_button_pressed)
 	potato_button.pressed.connect(_on_potato_button_pressed)
 	carrot_button.pressed.connect(_on_carrot_button_pressed)
+	tomato_button.pressed.connect(_on_tomato_button_pressed)
 	cabbage_button.pressed.connect(_on_cabbage_button_pressed)
 	lamp_button.pressed.connect(_on_lamp_button_pressed)
 
@@ -70,6 +73,17 @@ func _on_carrot_button_pressed():
 	GameManager.update_balance.emit()
 
 	var item: Node2D = carrot_seeds.instantiate()
+	get_tree().root.add_child(item)
+	item.position = spawn_pos
+
+func _on_tomato_button_pressed():
+	if GameManager.balance < 12:
+		return
+
+	GameManager.balance -= 12
+	GameManager.update_balance.emit()
+
+	var item: Node2D = tomato_seeds.instantiate()
 	get_tree().root.add_child(item)
 	item.position = spawn_pos
 
