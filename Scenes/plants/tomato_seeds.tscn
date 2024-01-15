@@ -1,24 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5vu88a170mi8"]
+[gd_scene load_steps=6 format=3 uid="uid://di4tgx5mf60jf"]
 
-[ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_lrwqt"]
-[ext_resource type="PackedScene" uid="uid://dabiybrhhst2q" path="res://Scenes/plants/carrot_plant.tscn" id="2_mktm3"]
-[ext_resource type="Texture2D" uid="uid://d4cdtnqi14hd6" path="res://Assets/plant_cabbage/cabbage_seeds.png" id="3_a05m3"]
-[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_py3el"]
+[ext_resource type="Script" path="res://Scripts/seeds.gd" id="1_8nm7n"]
+[ext_resource type="PackedScene" uid="uid://18f5c236f6ii" path="res://Scenes/plants/tomato_plant.tscn" id="2_k1d0i"]
+[ext_resource type="Texture2D" uid="uid://dwutwpw7cpaow" path="res://Assets/plant_potato/potato_seeds.png" id="3_enc1k"]
+[ext_resource type="FontFile" uid="uid://b456n2xtiy30l" path="res://Fonts/dogica.ttf" id="4_4t3lj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkwta"]
 size = Vector2(12, 16)
 
-[node name="CarrotSeeds" type="Area2D"]
+[node name="TomatoSeeds" type="Area2D"]
 z_index = 4
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("1_lrwqt")
-plant_scene = ExtResource("2_mktm3")
-count = 5
+script = ExtResource("1_8nm7n")
+plant_scene = ExtResource("2_k1d0i")
+count = 6
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 4
 texture_filter = 1
-texture = ExtResource("3_a05m3")
+texture = ExtResource("3_enc1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dkwta")
@@ -38,7 +39,7 @@ offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.5, 0.5)
-theme_override_fonts/normal_font = ExtResource("4_py3el")
+theme_override_fonts/normal_font = ExtResource("4_4t3lj")
 bbcode_enabled = true
 text = "3
 "
