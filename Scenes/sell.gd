@@ -11,7 +11,7 @@ func _on_area_entered(other: Area2D) -> void:
 	if other.name == "Interact":
 		GameManager.can_sell = true
 
-		if GameManager.holding != "":
+		if GameManager.holding != "" && GameManager.holding != "watering_can":
 			my_dialogue = "Press [X] to sell (" + str(GameManager.holding_price) + ")"
 			GameManager.dialogue = my_dialogue
 			GameManager.update_dialogue.emit()

@@ -35,7 +35,7 @@ func _custom_process(_delta: float) -> void:
 func _process(delta: float) -> void:
 	_custom_process(delta)
 
-	if Input.is_action_just_released("sell") && picked_up:
+	if Input.is_action_just_released("sell") && picked_up && get_type() != "watering_can":
 		GameManager.balance += sell_price
 		GameManager.update_balance.emit()
 		GameManager.dialogue = ""
