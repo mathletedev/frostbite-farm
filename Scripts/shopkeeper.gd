@@ -60,7 +60,6 @@ func _on_potato_button_pressed():
 	item.position = spawn_pos
 
 func _on_carrot_button_pressed():
-	print("carrot")
 	if GameManager.balance < 6:
 		return
 

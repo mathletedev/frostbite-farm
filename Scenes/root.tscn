@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=21 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Texture2D" uid="uid://dolwi6mc0algy" path="res://Assets/tree.png" id="1_7evox"]
@@ -9,13 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://cg31xievp6f3n" path="res://Scenes/watering_can.tscn" id="4_ajff6"]
 [ext_resource type="PackedScene" uid="uid://bak7jpn3jmgwd" path="res://Scenes/fire_lamp.tscn" id="6_vxrih"]
 [ext_resource type="PackedScene" uid="uid://c7w2cnmdydmil" path="res://Scenes/house.tscn" id="6_w7gb6"]
-[ext_resource type="PackedScene" path="res://Scenes/sell.tscn" id="7_oi3x5"]
+[ext_resource type="PackedScene" uid="uid://ohw5v0hwklat" path="res://Scenes/sell.tscn" id="7_oi3x5"]
 [ext_resource type="PackedScene" uid="uid://bjcy26ps73tl" path="res://Scenes/shop.tscn" id="8_kwaj3"]
 [ext_resource type="PackedScene" uid="uid://clxkd8iwdkmvl" path="res://Scenes/balance.tscn" id="9_qq8l1"]
 [ext_resource type="PackedScene" uid="uid://ceis700irf5tu" path="res://Scenes/dialogue.tscn" id="10_ymyaa"]
 [ext_resource type="Texture2D" uid="uid://cm0dscs54n581" path="res://Assets/box.png" id="12_qsw6y"]
-[ext_resource type="PackedScene" uid="uid://c5vu88a170mi8" path="res://Scenes/plants/carrot_seeds.tscn" id="13_fqiib"]
-[ext_resource type="PackedScene" uid="uid://bji8xai0suxy7" path="res://Scenes/plants/potato_seeds.tscn" id="13_l8urd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_p72cy"]
 
@@ -222,7 +220,6 @@ z_index = 6
 position = Vector2(16, -80)
 
 [node name="FireLamp" parent="." instance=ExtResource("6_vxrih")]
-z_index = 8
 position = Vector2(-48, -80)
 
 [node name="Player" parent="." instance=ExtResource("1_j0pxn")]
@@ -230,10 +227,6 @@ unique_name_in_owner = true
 z_index = 30
 texture_filter = 1
 scale = Vector2(1, 1)
-
-[node name="CarrotSeeds" parent="." instance=ExtResource("13_fqiib")]
-
-[node name="PotatoSeeds" parent="." instance=ExtResource("13_l8urd")]
 
 [node name="Box" type="Sprite2D" parent="."]
 unique_name_in_owner = true

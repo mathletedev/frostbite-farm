@@ -42,4 +42,4 @@ texture = ExtResource("3_1ds6a")
 [node name="Shopkeeper" parent="." instance=ExtResource("4_yidm4")]
 position = Vector2(-17, 11)
 scale = Vector2(0.615, 0.615)
-spawn_pos = Vector2(48, 16)
+spawn_pos = Vector2(240, -16)
