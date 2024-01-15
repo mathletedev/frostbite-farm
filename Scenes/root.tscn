@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://02kwyi48jume"]
+[gd_scene load_steps=29 format=3 uid="uid://02kwyi48jume"]
 
 [ext_resource type="Texture2D" uid="uid://bive3nvqhu8pj" path="res://Assets/snow_tileset.png" id="1_2a012"]
 [ext_resource type="Script" path="res://Scenes/escape_menu.gd" id="1_5o43g"]
